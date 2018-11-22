@@ -42,23 +42,24 @@ relatorio de postes nao inspecionados por mes
 relatorio numero de postes por condição por mes
 -numero de postes por condição (em janeiro 20 postes adequados e 10 postes inadequados)
 EX.:
-
-|MES| ADEQ  | NAO ADEQ  |
+```
+| MES | ADEQ | NAO ADEQ |
 |--|--|--|
-|JAN|   2   |     5     |
-|FEV|   3   |     6     |
-
+| JAN | 2 | 5 |
+| FEV | 3 | 6 |
+```
 relatorio saude das caixas por periodo
 quantos problemas foram relatados por caixa em um determiado período
 cada poste pode conter até 3 problemas (poste prumo, adquação e fiação)
 usuario fala data
-
-|CAIXA | PROBLEMAS | MAX PROBLEMAS       | 
-|--|--|--|
-|1     |    1      | (n de postesx3xmes) | 
-|2     |    25     | (n de postesx3xmes) | 
-|3     |    112    | (n de postesx3xmes) | 
+EX.:
 ```
+|CAIXA | PROBLEMAS | MAX PROBLEMAS | 
+|--|--|--|
+| 1 | 1 | (n de postesx3xmes) | 
+| 2 | 25 | (n de postesx3xmes) | 
+| 3 | 112 | (n de postesx3xmes) | 
+
 
 ## Interface
 ```
