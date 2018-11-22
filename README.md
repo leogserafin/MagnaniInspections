@@ -1,10 +1,10 @@
-### Sistema para empresa de inspeções em postes de energia elétrica
+## Sistema para empresa de inspeções em postes de energia elétrica
 ```
 região: itajaí
 
 realizar inspeções mensalmente (todos os postes)
 ```
-## Útil para banco de bd
+### Útil para o bd
 ```
 INSPEÇÃO
 	-ID(PK)
@@ -34,7 +34,7 @@ precisa mostrar quais postes nao foram inspecionados no mes!!
 desde q sejam em meses distintos não há problema 
 (impossivel haver 2 inspeções no mesmo mes do mesmo poste!!!)
 
-## Tipos de relatórios e como devem ser tratados
+### Tipos de relatórios e como devem ser tratados
 ```
 relatorio de postes nao inspecionados por mes
 -quais postes nao tiveram inspeção pela data descrita pelo usuario (data inicial e final)(mes/ano)
@@ -61,7 +61,7 @@ EX.:
 | 3 | 112 | (n de postesx3xmes) | 
 
 
-## Interface
+### Interface
 ```
 menu - cadastro de postes (id digitado sem serial)(excluir se necessario)
  - relatórios - cadastro de inspeção - cadastro de caixa 
