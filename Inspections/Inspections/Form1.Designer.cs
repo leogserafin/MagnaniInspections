@@ -30,35 +30,40 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.listTabs = new System.Windows.Forms.TabControl();
-            this.polesTab = new System.Windows.Forms.TabPage();
-            this.boxesTab = new System.Windows.Forms.TabPage();
-            this.inspectionsTab = new System.Windows.Forms.TabPage();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.inspectionsPictureBox = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.energyBoxPictureBox = new System.Windows.Forms.PictureBox();
             this.PolesPictureBox = new System.Windows.Forms.PictureBox();
+            this.listTabs = new System.Windows.Forms.TabControl();
+            this.polesTab = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.boxesTab = new System.Windows.Forms.TabPage();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.inspectionsTab = new System.Windows.Forms.TabPage();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.poleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.poleSituation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.poleBob = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.poleWiring = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.poleDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
-            this.listTabs.SuspendLayout();
-            this.polesTab.SuspendLayout();
-            this.boxesTab.SuspendLayout();
-            this.inspectionsTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inspectionsPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.energyBoxPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PolesPictureBox)).BeginInit();
+            this.listTabs.SuspendLayout();
+            this.polesTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.boxesTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.inspectionsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -77,81 +82,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(428, 114);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // listTabs
-            // 
-            this.listTabs.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-            this.listTabs.Controls.Add(this.polesTab);
-            this.listTabs.Controls.Add(this.boxesTab);
-            this.listTabs.Controls.Add(this.inspectionsTab);
-            this.listTabs.Location = new System.Drawing.Point(12, 132);
-            this.listTabs.Name = "listTabs";
-            this.listTabs.SelectedIndex = 0;
-            this.listTabs.Size = new System.Drawing.Size(428, 303);
-            this.listTabs.TabIndex = 4;
-            // 
-            // polesTab
-            // 
-            this.polesTab.Controls.Add(this.dataGridView2);
-            this.polesTab.Location = new System.Drawing.Point(4, 4);
-            this.polesTab.Name = "polesTab";
-            this.polesTab.Padding = new System.Windows.Forms.Padding(3);
-            this.polesTab.Size = new System.Drawing.Size(420, 277);
-            this.polesTab.TabIndex = 0;
-            this.polesTab.Text = "Postes";
-            this.polesTab.UseVisualStyleBackColor = true;
-            // 
-            // boxesTab
-            // 
-            this.boxesTab.Controls.Add(this.dataGridView3);
-            this.boxesTab.Location = new System.Drawing.Point(4, 4);
-            this.boxesTab.Name = "boxesTab";
-            this.boxesTab.Padding = new System.Windows.Forms.Padding(3);
-            this.boxesTab.Size = new System.Drawing.Size(420, 277);
-            this.boxesTab.TabIndex = 1;
-            this.boxesTab.Text = "Caixas";
-            this.boxesTab.UseVisualStyleBackColor = true;
-            // 
-            // inspectionsTab
-            // 
-            this.inspectionsTab.Controls.Add(this.dataGridView4);
-            this.inspectionsTab.Location = new System.Drawing.Point(4, 4);
-            this.inspectionsTab.Name = "inspectionsTab";
-            this.inspectionsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.inspectionsTab.Size = new System.Drawing.Size(420, 277);
-            this.inspectionsTab.TabIndex = 2;
-            this.inspectionsTab.Text = "Inspeções";
-            this.inspectionsTab.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Inspections.Properties.Resources.detalhes;
-            this.pictureBox3.Location = new System.Drawing.Point(319, 415);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(35, 36);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Inspections.Properties.Resources.incluir;
-            this.pictureBox2.Location = new System.Drawing.Point(360, 415);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(35, 36);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Inspections.Properties.Resources.excluir;
-            this.pictureBox1.Location = new System.Drawing.Point(401, 415);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(35, 36);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // inspectionsPictureBox
             // 
@@ -200,14 +130,55 @@
             this.PolesPictureBox.TabStop = false;
             this.PolesPictureBox.Click += new System.EventHandler(this.polesPictureBox_Click);
             // 
+            // listTabs
+            // 
+            this.listTabs.Alignment = System.Windows.Forms.TabAlignment.Bottom;
+            this.listTabs.Controls.Add(this.polesTab);
+            this.listTabs.Controls.Add(this.boxesTab);
+            this.listTabs.Controls.Add(this.inspectionsTab);
+            this.listTabs.Location = new System.Drawing.Point(12, 132);
+            this.listTabs.Name = "listTabs";
+            this.listTabs.SelectedIndex = 0;
+            this.listTabs.Size = new System.Drawing.Size(428, 303);
+            this.listTabs.TabIndex = 4;
+            // 
+            // polesTab
+            // 
+            this.polesTab.Controls.Add(this.dataGridView2);
+            this.polesTab.Location = new System.Drawing.Point(4, 4);
+            this.polesTab.Name = "polesTab";
+            this.polesTab.Padding = new System.Windows.Forms.Padding(3);
+            this.polesTab.Size = new System.Drawing.Size(420, 277);
+            this.polesTab.TabIndex = 0;
+            this.polesTab.Text = "Postes";
+            this.polesTab.UseVisualStyleBackColor = true;
+            // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.poleID,
+            this.poleSituation,
+            this.poleBob,
+            this.poleWiring,
+            this.poleDate});
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(3, 3);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(414, 271);
             this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
+            // boxesTab
+            // 
+            this.boxesTab.Controls.Add(this.dataGridView3);
+            this.boxesTab.Location = new System.Drawing.Point(4, 4);
+            this.boxesTab.Name = "boxesTab";
+            this.boxesTab.Padding = new System.Windows.Forms.Padding(3);
+            this.boxesTab.Size = new System.Drawing.Size(420, 277);
+            this.boxesTab.TabIndex = 1;
+            this.boxesTab.Text = "Caixas";
+            this.boxesTab.UseVisualStyleBackColor = true;
             // 
             // dataGridView3
             // 
@@ -218,6 +189,17 @@
             this.dataGridView3.Size = new System.Drawing.Size(414, 271);
             this.dataGridView3.TabIndex = 0;
             // 
+            // inspectionsTab
+            // 
+            this.inspectionsTab.Controls.Add(this.dataGridView4);
+            this.inspectionsTab.Location = new System.Drawing.Point(4, 4);
+            this.inspectionsTab.Name = "inspectionsTab";
+            this.inspectionsTab.Padding = new System.Windows.Forms.Padding(3);
+            this.inspectionsTab.Size = new System.Drawing.Size(420, 277);
+            this.inspectionsTab.TabIndex = 2;
+            this.inspectionsTab.Text = "Inspeções";
+            this.inspectionsTab.UseVisualStyleBackColor = true;
+            // 
             // dataGridView4
             // 
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -226,6 +208,71 @@
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.Size = new System.Drawing.Size(414, 271);
             this.dataGridView4.TabIndex = 0;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Inspections.Properties.Resources.detalhes;
+            this.pictureBox3.Location = new System.Drawing.Point(319, 415);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(35, 36);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Inspections.Properties.Resources.incluir;
+            this.pictureBox2.Location = new System.Drawing.Point(360, 415);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(35, 36);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Inspections.Properties.Resources.excluir;
+            this.pictureBox1.Location = new System.Drawing.Point(401, 415);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(35, 36);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // poleID
+            // 
+            this.poleID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.poleID.HeaderText = "Código";
+            this.poleID.Name = "poleID";
+            this.poleID.ReadOnly = true;
+            // 
+            // poleSituation
+            // 
+            this.poleSituation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.poleSituation.HeaderText = "Situação";
+            this.poleSituation.Name = "poleSituation";
+            this.poleSituation.ReadOnly = true;
+            // 
+            // poleBob
+            // 
+            this.poleBob.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.poleBob.HeaderText = "Prumo";
+            this.poleBob.Name = "poleBob";
+            this.poleBob.ReadOnly = true;
+            // 
+            // poleWiring
+            // 
+            this.poleWiring.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.poleWiring.HeaderText = "Fiação";
+            this.poleWiring.Name = "poleWiring";
+            this.poleWiring.ReadOnly = true;
+            // 
+            // poleDate
+            // 
+            this.poleDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.poleDate.HeaderText = "Data";
+            this.poleDate.Name = "poleDate";
+            this.poleDate.ReadOnly = true;
             // 
             // Form1
             // 
@@ -240,20 +287,20 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.listTabs.ResumeLayout(false);
-            this.polesTab.ResumeLayout(false);
-            this.boxesTab.ResumeLayout(false);
-            this.inspectionsTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inspectionsPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.energyBoxPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PolesPictureBox)).EndInit();
+            this.listTabs.ResumeLayout(false);
+            this.polesTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.boxesTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.inspectionsTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -278,6 +325,11 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn poleID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn poleSituation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn poleBob;
+        private System.Windows.Forms.DataGridViewTextBoxColumn poleWiring;
+        private System.Windows.Forms.DataGridViewTextBoxColumn poleDate;
     }
 }
 

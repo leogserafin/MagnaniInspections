@@ -50,5 +50,10 @@ namespace Inspections
             listTabs.Controls.Remove(boxesTab);
             listTabs.Controls.Add(boxesTab);
         }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

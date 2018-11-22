@@ -28,3 +28,13 @@ C:\Users\6205941\Desktop\Inspections\Inspections\obj\Debug\Inspections.pdb
 C:\Users\6205941\Desktop\Inspections\Inspections\bin\Debug\Inspections.exe.config
 C:\Users\6205941\Desktop\Inspections\Inspections\bin\Debug\Inspections.exe
 C:\Users\6205941\Desktop\Inspections\Inspections\bin\Debug\Inspections.pdb
+C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\bin\Debug\Inspections.exe.config
+C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\bin\Debug\Inspections.exe
+C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\bin\Debug\Inspections.pdb
+C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\obj\Debug\Inspections.csprojAssemblyReference.cache
+C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\obj\Debug\Inspections.Form1.resources
+C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\obj\Debug\Inspections.Properties.Resources.resources
+C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\obj\Debug\Inspections.csproj.GenerateResource.cache
+C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\obj\Debug\Inspections.csproj.CoreCompileInputs.cache
+C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\obj\Debug\Inspections.exe
+C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\obj\Debug\Inspections.pdb
