@@ -103,7 +103,18 @@ namespace Inspections
             listTabs.Controls.Remove(polesTab);
             listTabs.Controls.Remove(inspectionsTab);
             listTabs.Controls.Remove(boxesTab);
+            if (listTabs.Focused.Equals(polesTab)) typeRegistration.Text = "Poste";
             listTabs.Controls.Add(registerTab);
+        }
+
+        private void typeRegistration_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (typeRegistration.Text.Equals("Caixa"))
+                MessageBox.Show("Agora implementa o cadastro de uma caixa");
+            else if(typeRegistration.Text.Equals("Poste"))
+                MessageBox.Show("Agora implementa o cadastro de um poste");
+            else if(typeRegistration.Text.Equals("Inspeção"))
+                MessageBox.Show("Agora implementa o cadastro de uma inspeção");
         }
     }
 }
