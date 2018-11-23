@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.inspectionsPictureBox = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -36,19 +38,19 @@
             this.PolesPictureBox = new System.Windows.Forms.PictureBox();
             this.listTabs = new System.Windows.Forms.TabControl();
             this.polesTab = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.poleGridView = new System.Windows.Forms.DataGridView();
             this.boxesTab = new System.Windows.Forms.TabPage();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.boxID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.boxType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.boxWatts = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.boxLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inspectionsTab = new System.Windows.Forms.TabPage();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.poleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.poleSituation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.poleBob = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.poleWiring = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.poleDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.poleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inspectionsPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -56,7 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PolesPictureBox)).BeginInit();
             this.listTabs.SuspendLayout();
             this.polesTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poleGridView)).BeginInit();
             this.boxesTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.inspectionsTab.SuspendLayout();
@@ -64,6 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poleBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -144,7 +147,7 @@
             // 
             // polesTab
             // 
-            this.polesTab.Controls.Add(this.dataGridView2);
+            this.polesTab.Controls.Add(this.poleGridView);
             this.polesTab.Location = new System.Drawing.Point(4, 4);
             this.polesTab.Name = "polesTab";
             this.polesTab.Padding = new System.Windows.Forms.Padding(3);
@@ -153,21 +156,24 @@
             this.polesTab.Text = "Postes";
             this.polesTab.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // poleGridView
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.poleID,
-            this.poleSituation,
-            this.poleBob,
-            this.poleWiring,
-            this.poleDate});
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(414, 271);
-            this.dataGridView2.TabIndex = 0;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            this.poleGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.poleGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.poleGridView.Location = new System.Drawing.Point(3, 3);
+            this.poleGridView.Name = "poleGridView";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.NullValue = "oie";
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.poleGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.poleGridView.Size = new System.Drawing.Size(414, 271);
+            this.poleGridView.TabIndex = 0;
+            this.poleGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // boxesTab
             // 
@@ -183,11 +189,45 @@
             // dataGridView3
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.boxID,
+            this.boxType,
+            this.boxWatts,
+            this.boxLocation});
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView3.Location = new System.Drawing.Point(3, 3);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(414, 271);
             this.dataGridView3.TabIndex = 0;
+            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
+            // 
+            // boxID
+            // 
+            this.boxID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.boxID.HeaderText = "Código";
+            this.boxID.Name = "boxID";
+            this.boxID.ReadOnly = true;
+            // 
+            // boxType
+            // 
+            this.boxType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.boxType.HeaderText = "Tipo";
+            this.boxType.Name = "boxType";
+            this.boxType.ReadOnly = true;
+            // 
+            // boxWatts
+            // 
+            this.boxWatts.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.boxWatts.HeaderText = "Watts";
+            this.boxWatts.Name = "boxWatts";
+            this.boxWatts.ReadOnly = true;
+            // 
+            // boxLocation
+            // 
+            this.boxLocation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.boxLocation.HeaderText = "Localização";
+            this.boxLocation.Name = "boxLocation";
+            this.boxLocation.ReadOnly = true;
             // 
             // inspectionsTab
             // 
@@ -239,40 +279,9 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // poleID
+            // poleBindingSource
             // 
-            this.poleID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.poleID.HeaderText = "Código";
-            this.poleID.Name = "poleID";
-            this.poleID.ReadOnly = true;
-            // 
-            // poleSituation
-            // 
-            this.poleSituation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.poleSituation.HeaderText = "Situação";
-            this.poleSituation.Name = "poleSituation";
-            this.poleSituation.ReadOnly = true;
-            // 
-            // poleBob
-            // 
-            this.poleBob.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.poleBob.HeaderText = "Prumo";
-            this.poleBob.Name = "poleBob";
-            this.poleBob.ReadOnly = true;
-            // 
-            // poleWiring
-            // 
-            this.poleWiring.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.poleWiring.HeaderText = "Fiação";
-            this.poleWiring.Name = "poleWiring";
-            this.poleWiring.ReadOnly = true;
-            // 
-            // poleDate
-            // 
-            this.poleDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.poleDate.HeaderText = "Data";
-            this.poleDate.Name = "poleDate";
-            this.poleDate.ReadOnly = true;
+            this.poleBindingSource.DataSource = typeof(Inspections.Entities.Pole);
             // 
             // Form1
             // 
@@ -293,7 +302,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PolesPictureBox)).EndInit();
             this.listTabs.ResumeLayout(false);
             this.polesTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poleGridView)).EndInit();
             this.boxesTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.inspectionsTab.ResumeLayout(false);
@@ -301,6 +310,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poleBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -313,7 +323,6 @@
         private System.Windows.Forms.PictureBox inspectionsPictureBox;
         private System.Windows.Forms.PictureBox energyBoxPictureBox;
         private System.Windows.Forms.Panel panelGrids;
-        private System.Windows.Forms.DataGridView polesGridView;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -322,14 +331,14 @@
         private System.Windows.Forms.TabPage polesTab;
         private System.Windows.Forms.TabPage boxesTab;
         private System.Windows.Forms.TabPage inspectionsTab;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView poleGridView;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn poleID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn poleSituation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn poleBob;
-        private System.Windows.Forms.DataGridViewTextBoxColumn poleWiring;
-        private System.Windows.Forms.DataGridViewTextBoxColumn poleDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn boxID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn boxType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn boxWatts;
+        private System.Windows.Forms.DataGridViewTextBoxColumn boxLocation;
+        private System.Windows.Forms.BindingSource poleBindingSource;
     }
 }
 

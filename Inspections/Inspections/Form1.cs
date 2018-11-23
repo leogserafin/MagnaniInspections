@@ -1,4 +1,5 @@
 ﻿using System;
+using Inspections.Entities;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,19 @@ namespace Inspections
             InitializeComponent();
             listTabs.Controls.Remove(inspectionsTab);
             listTabs.Controls.Remove(boxesTab);
+
+            var polesList = from pole in Pole.Poles()
+                       orderby pole.id
+                       select new
+                       {
+                           Código = pole.id,
+                           Altura = pole.height,
+                           Material = pole.material,
+                           Localização = pole.latitude + ":" + pole.longitude,
+                           Caixa = pole.boxID
+                       };
+            poleGridView.DataSource = polesList.ToList();
+
         }
 
         private void polesPictureBox_Click(object sender, EventArgs e)
@@ -52,6 +66,11 @@ namespace Inspections
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
