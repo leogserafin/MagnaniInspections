@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -40,17 +39,12 @@
             this.polesTab = new System.Windows.Forms.TabPage();
             this.poleGridView = new System.Windows.Forms.DataGridView();
             this.boxesTab = new System.Windows.Forms.TabPage();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.boxID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.boxType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.boxWatts = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.boxLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.boxGridView = new System.Windows.Forms.DataGridView();
             this.inspectionsTab = new System.Windows.Forms.TabPage();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.inspectionGridView = new System.Windows.Forms.DataGridView();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.poleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inspectionsPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -60,13 +54,12 @@
             this.polesTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.poleGridView)).BeginInit();
             this.boxesTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boxGridView)).BeginInit();
             this.inspectionsTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inspectionGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poleBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -177,7 +170,7 @@
             // 
             // boxesTab
             // 
-            this.boxesTab.Controls.Add(this.dataGridView3);
+            this.boxesTab.Controls.Add(this.boxGridView);
             this.boxesTab.Location = new System.Drawing.Point(4, 4);
             this.boxesTab.Name = "boxesTab";
             this.boxesTab.Padding = new System.Windows.Forms.Padding(3);
@@ -186,52 +179,19 @@
             this.boxesTab.Text = "Caixas";
             this.boxesTab.UseVisualStyleBackColor = true;
             // 
-            // dataGridView3
+            // boxGridView
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.boxID,
-            this.boxType,
-            this.boxWatts,
-            this.boxLocation});
-            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView3.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(414, 271);
-            this.dataGridView3.TabIndex = 0;
-            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
-            // 
-            // boxID
-            // 
-            this.boxID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.boxID.HeaderText = "Código";
-            this.boxID.Name = "boxID";
-            this.boxID.ReadOnly = true;
-            // 
-            // boxType
-            // 
-            this.boxType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.boxType.HeaderText = "Tipo";
-            this.boxType.Name = "boxType";
-            this.boxType.ReadOnly = true;
-            // 
-            // boxWatts
-            // 
-            this.boxWatts.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.boxWatts.HeaderText = "Watts";
-            this.boxWatts.Name = "boxWatts";
-            this.boxWatts.ReadOnly = true;
-            // 
-            // boxLocation
-            // 
-            this.boxLocation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.boxLocation.HeaderText = "Localização";
-            this.boxLocation.Name = "boxLocation";
-            this.boxLocation.ReadOnly = true;
+            this.boxGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.boxGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.boxGridView.Location = new System.Drawing.Point(3, 3);
+            this.boxGridView.Name = "boxGridView";
+            this.boxGridView.Size = new System.Drawing.Size(414, 271);
+            this.boxGridView.TabIndex = 0;
+            this.boxGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             // 
             // inspectionsTab
             // 
-            this.inspectionsTab.Controls.Add(this.dataGridView4);
+            this.inspectionsTab.Controls.Add(this.inspectionGridView);
             this.inspectionsTab.Location = new System.Drawing.Point(4, 4);
             this.inspectionsTab.Name = "inspectionsTab";
             this.inspectionsTab.Padding = new System.Windows.Forms.Padding(3);
@@ -240,14 +200,14 @@
             this.inspectionsTab.Text = "Inspeções";
             this.inspectionsTab.UseVisualStyleBackColor = true;
             // 
-            // dataGridView4
+            // inspectionGridView
             // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView4.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(414, 271);
-            this.dataGridView4.TabIndex = 0;
+            this.inspectionGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.inspectionGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.inspectionGridView.Location = new System.Drawing.Point(3, 3);
+            this.inspectionGridView.Name = "inspectionGridView";
+            this.inspectionGridView.Size = new System.Drawing.Size(414, 271);
+            this.inspectionGridView.TabIndex = 0;
             // 
             // pictureBox3
             // 
@@ -279,10 +239,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // poleBindingSource
-            // 
-            this.poleBindingSource.DataSource = typeof(Inspections.Entities.Pole);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -304,13 +260,12 @@
             this.polesTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.poleGridView)).EndInit();
             this.boxesTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boxGridView)).EndInit();
             this.inspectionsTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inspectionGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poleBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -332,13 +287,8 @@
         private System.Windows.Forms.TabPage boxesTab;
         private System.Windows.Forms.TabPage inspectionsTab;
         private System.Windows.Forms.DataGridView poleGridView;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn boxID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn boxType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn boxWatts;
-        private System.Windows.Forms.DataGridViewTextBoxColumn boxLocation;
-        private System.Windows.Forms.BindingSource poleBindingSource;
+        private System.Windows.Forms.DataGridView boxGridView;
+        private System.Windows.Forms.DataGridView inspectionGridView;
     }
 }
 

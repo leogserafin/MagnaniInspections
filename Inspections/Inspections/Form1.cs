@@ -21,18 +21,7 @@ namespace Inspections
             listTabs.Controls.Remove(inspectionsTab);
             listTabs.Controls.Remove(boxesTab);
 
-            var polesList = from pole in Pole.Poles()
-                       orderby pole.id
-                       select new
-                       {
-                           Código = pole.id,
-                           Altura = pole.height,
-                           Material = pole.material,
-                           Localização = pole.latitude + ":" + pole.longitude,
-                           Caixa = pole.boxID
-                       };
-            poleGridView.DataSource = polesList.ToList();
-
+            insertValuesInGrids();
         }
 
         private void polesPictureBox_Click(object sender, EventArgs e)
@@ -74,5 +63,48 @@ namespace Inspections
         {
 
         }
+
+
+
+        private void insertValuesInGrids()
+        {
+            var polesList = from pole in Pole.Poles()
+                            orderby pole.id
+                            select new
+                            {
+                                Código = pole.id,
+                                Altura = pole.height,
+                                Material = pole.material,
+                                Localização = pole.latitude + ":" + pole.longitude,
+                                Caixa = pole.boxID
+                            };
+            poleGridView.DataSource = polesList.ToList();
+
+            var boxesList = from box in Box.Boxes()
+                            orderby box.id
+                            select new
+                            {
+                                Código = box.id,
+                                Tipo = box.type,
+                                Watts = box.watts,
+                                Localização = box.latitude + ":" + box.longitude,
+
+                            };
+            boxGridView.DataSource = boxesList.ToList();
+
+            var inspectionsList = from inspection in Inspection.Inspections()
+                                  orderby inspection.id
+                                  select new
+                                  {
+                                      Código = inspection.id,
+                                      Estado = inspection.poleSituation,
+                                      Fiação = inspection.poleWiring,
+                                      Prumo = inspection.bob,
+                                      Data = inspection.date
+
+                            };
+            inspectionGridView.DataSource = inspectionsList.ToList();
+        }
+
     }
 }

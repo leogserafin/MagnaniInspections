@@ -16,21 +16,20 @@ namespace Inspections.Entities
         public int boxID { get; set; }
 
         public static List<Pole> Poles()
-       {
+        {
             var polesList = new List<Pole>();
 
-            var pole1 = new Pole();
-            pole1.id = 0;
-            pole1.height = 25.2;
-            pole1.material = "Madeira";
-            pole1.latitude = 55.3M;
-            pole1.longitude = 99.3M;
-            pole1.boxID = 0;
+            var poleTest = new Pole();
+            poleTest.id = 0;
+            poleTest.height = 25.2;
+            poleTest.material = "Madeira";
+            poleTest.latitude = 55.3M;
+            poleTest.longitude = 99.3M;
+            poleTest.boxID = 0;
 
-            polesList.Add(pole1);
+            polesList.Add(poleTest);
 
             return polesList;
         }
-
     }
 }
