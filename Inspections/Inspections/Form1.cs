@@ -106,5 +106,9 @@ namespace Inspections
             inspectionGridView.DataSource = inspectionsList.ToList();
         }
 
+        private void inspectionGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
