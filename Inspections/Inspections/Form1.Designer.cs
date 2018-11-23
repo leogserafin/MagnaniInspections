@@ -38,6 +38,7 @@
             this.inspectionsTab = new System.Windows.Forms.TabPage();
             this.inspectionGridView = new System.Windows.Forms.DataGridView();
             this.registerTab = new System.Windows.Forms.TabPage();
+            this.type = new System.Windows.Forms.Label();
             this.typeRegistration = new System.Windows.Forms.ComboBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -47,7 +48,6 @@
             this.polesPictureBox = new System.Windows.Forms.PictureBox();
             this.inspectionsPictureBox = new System.Windows.Forms.PictureBox();
             this.reportsPictureBox = new System.Windows.Forms.PictureBox();
-            this.type = new System.Windows.Forms.Label();
             this.listTabs.SuspendLayout();
             this.polesTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.poleGridView)).BeginInit();
@@ -89,7 +89,7 @@
             this.polesTab.Location = new System.Drawing.Point(4, 4);
             this.polesTab.Name = "polesTab";
             this.polesTab.Padding = new System.Windows.Forms.Padding(3);
-            this.polesTab.Size = new System.Drawing.Size(420, 277);
+            this.polesTab.Size = new System.Drawing.Size(420, 273);
             this.polesTab.TabIndex = 0;
             this.polesTab.Text = "Postes";
             this.polesTab.UseVisualStyleBackColor = true;
@@ -111,7 +111,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.poleGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.poleGridView.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.poleGridView.Size = new System.Drawing.Size(414, 271);
+            this.poleGridView.Size = new System.Drawing.Size(414, 267);
             this.poleGridView.TabIndex = 0;
             // 
             // boxesTab
@@ -120,7 +120,7 @@
             this.boxesTab.Location = new System.Drawing.Point(4, 4);
             this.boxesTab.Name = "boxesTab";
             this.boxesTab.Padding = new System.Windows.Forms.Padding(3);
-            this.boxesTab.Size = new System.Drawing.Size(420, 277);
+            this.boxesTab.Size = new System.Drawing.Size(420, 273);
             this.boxesTab.TabIndex = 1;
             this.boxesTab.Text = "Caixas";
             this.boxesTab.UseVisualStyleBackColor = true;
@@ -132,7 +132,7 @@
             this.boxGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.boxGridView.Location = new System.Drawing.Point(3, 3);
             this.boxGridView.Name = "boxGridView";
-            this.boxGridView.Size = new System.Drawing.Size(414, 271);
+            this.boxGridView.Size = new System.Drawing.Size(414, 267);
             this.boxGridView.TabIndex = 0;
             // 
             // inspectionsTab
@@ -141,7 +141,7 @@
             this.inspectionsTab.Location = new System.Drawing.Point(4, 4);
             this.inspectionsTab.Name = "inspectionsTab";
             this.inspectionsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.inspectionsTab.Size = new System.Drawing.Size(420, 277);
+            this.inspectionsTab.Size = new System.Drawing.Size(420, 273);
             this.inspectionsTab.TabIndex = 2;
             this.inspectionsTab.Text = "Inspeções";
             this.inspectionsTab.UseVisualStyleBackColor = true;
@@ -153,7 +153,7 @@
             this.inspectionGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.inspectionGridView.Location = new System.Drawing.Point(3, 3);
             this.inspectionGridView.Name = "inspectionGridView";
-            this.inspectionGridView.Size = new System.Drawing.Size(414, 271);
+            this.inspectionGridView.Size = new System.Drawing.Size(414, 267);
             this.inspectionGridView.TabIndex = 0;
             // 
             // registerTab
@@ -167,6 +167,15 @@
             this.registerTab.TabIndex = 3;
             this.registerTab.Text = "Cadastro";
             this.registerTab.UseVisualStyleBackColor = true;
+            // 
+            // type
+            // 
+            this.type.AutoSize = true;
+            this.type.Location = new System.Drawing.Point(6, 9);
+            this.type.Name = "type";
+            this.type.Size = new System.Drawing.Size(28, 13);
+            this.type.TabIndex = 1;
+            this.type.Text = "Tipo";
             // 
             // typeRegistration
             // 
@@ -238,6 +247,7 @@
             this.boxesPictureBox.TabIndex = 2;
             this.boxesPictureBox.TabStop = false;
             this.boxesPictureBox.Click += new System.EventHandler(this.energyBoxPictureBox_Click);
+            this.boxesPictureBox.DoubleClick += new System.EventHandler(this.insertNewPole_Click);
             // 
             // polesPictureBox
             // 
@@ -249,6 +259,7 @@
             this.polesPictureBox.TabIndex = 3;
             this.polesPictureBox.TabStop = false;
             this.polesPictureBox.Click += new System.EventHandler(this.polesPictureBox_Click);
+            this.polesPictureBox.DoubleClick += new System.EventHandler(this.insertNewPole_Click);
             // 
             // inspectionsPictureBox
             // 
@@ -260,6 +271,7 @@
             this.inspectionsPictureBox.TabIndex = 4;
             this.inspectionsPictureBox.TabStop = false;
             this.inspectionsPictureBox.Click += new System.EventHandler(this.inspectionsPictureBox_Click);
+            this.inspectionsPictureBox.DoubleClick += new System.EventHandler(this.insertNewPole_Click);
             // 
             // reportsPictureBox
             // 
@@ -271,20 +283,11 @@
             this.reportsPictureBox.TabIndex = 5;
             this.reportsPictureBox.TabStop = false;
             // 
-            // type
-            // 
-            this.type.AutoSize = true;
-            this.type.Location = new System.Drawing.Point(6, 9);
-            this.type.Name = "type";
-            this.type.Size = new System.Drawing.Size(28, 13);
-            this.type.TabIndex = 1;
-            this.type.Text = "Tipo";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(451, 459);
+            this.ClientSize = new System.Drawing.Size(451, 460);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);

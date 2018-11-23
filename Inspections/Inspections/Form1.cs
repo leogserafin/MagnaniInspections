@@ -100,10 +100,21 @@ namespace Inspections
 
         private void insertNewPole_Click(object sender, EventArgs e)
         {
-            listTabs.Controls.Remove(polesTab);
-            listTabs.Controls.Remove(inspectionsTab);
-            listTabs.Controls.Remove(boxesTab);
-            if (listTabs.Focused.Equals(polesTab)) typeRegistration.Text = "Poste";
+            if (listTabs.Controls.Contains(polesTab))
+            {
+                listTabs.Controls.Remove(polesTab);
+                typeRegistration.Text = "Poste";
+            }
+            if (listTabs.Controls.Contains(boxesTab))
+            {
+                listTabs.Controls.Remove(boxesTab);
+                typeRegistration.Text = "Caixa";
+            }
+            if (listTabs.Controls.Contains(inspectionsTab))
+            {
+                listTabs.Controls.Remove(inspectionsTab);
+                typeRegistration.Text = "Inspeção";
+            }
             listTabs.Controls.Add(registerTab);
         }
 
