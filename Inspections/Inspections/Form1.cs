@@ -20,6 +20,7 @@ namespace Inspections
             InitializeComponent();
             listTabs.Controls.Remove(inspectionsTab);
             listTabs.Controls.Remove(boxesTab);
+            listTabs.Controls.Remove(registerTab);
 
             insertValuesInGrids();
         }
@@ -29,6 +30,7 @@ namespace Inspections
             listTabs.Controls.Remove(boxesTab);
             listTabs.Controls.Remove(inspectionsTab);
             listTabs.Controls.Remove(polesTab);
+            listTabs.Controls.Remove(registerTab);
             listTabs.Controls.Add(polesTab);
         }
 
@@ -43,6 +45,7 @@ namespace Inspections
             listTabs.Controls.Remove(boxesTab);
             listTabs.Controls.Remove(polesTab);
             listTabs.Controls.Remove(inspectionsTab);
+            listTabs.Controls.Remove(registerTab);
             listTabs.Controls.Add(inspectionsTab);
         }
 
@@ -51,20 +54,9 @@ namespace Inspections
             listTabs.Controls.Remove(polesTab);
             listTabs.Controls.Remove(inspectionsTab);
             listTabs.Controls.Remove(boxesTab);
+            listTabs.Controls.Remove(registerTab);
             listTabs.Controls.Add(boxesTab);
         }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-
 
         private void insertValuesInGrids()
         {
@@ -102,13 +94,16 @@ namespace Inspections
                                       Prumo = inspection.bob,
                                       Data = inspection.date
 
-                            };
+                                  };
             inspectionGridView.DataSource = inspectionsList.ToList();
         }
 
-        private void inspectionGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void insertNewPole_Click(object sender, EventArgs e)
         {
-
+            listTabs.Controls.Remove(polesTab);
+            listTabs.Controls.Remove(inspectionsTab);
+            listTabs.Controls.Remove(boxesTab);
+            listTabs.Controls.Add(registerTab);
         }
     }
 }
