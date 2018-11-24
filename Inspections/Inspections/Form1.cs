@@ -21,7 +21,6 @@ namespace Inspections
             listTabs.Controls.Remove(inspectionsTab);
             listTabs.Controls.Remove(boxesTab);
             listTabs.Controls.Remove(registerTab);
-
             insertValuesInGrids();
         }
 
@@ -98,7 +97,7 @@ namespace Inspections
             inspectionGridView.DataSource = inspectionsList.ToList();
         }
 
-        private void insertNewPole_Click(object sender, EventArgs e)
+        private void insertNewRegister_Click(object sender, EventArgs e)
         {
             if (listTabs.Controls.Contains(polesTab))
             {
@@ -121,11 +120,11 @@ namespace Inspections
         private void typeRegistration_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (typeRegistration.Text.Equals("Caixa"))
-                MessageBox.Show("Agora implementa o cadastro de uma caixa");
-            else if(typeRegistration.Text.Equals("Poste"))
-                MessageBox.Show("Agora implementa o cadastro de um poste");
-            else if(typeRegistration.Text.Equals("Inspeção"))
-                MessageBox.Show("Agora implementa o cadastro de uma inspeção");
+                boxRegister.BringToFront();
+            else if (typeRegistration.Text.Equals("Poste"))
+                poleRegister.BringToFront();
+            else if (typeRegistration.Text.Equals("Inspeção"))
+                inspectionRegister.BringToFront();
         }
     }
 }
