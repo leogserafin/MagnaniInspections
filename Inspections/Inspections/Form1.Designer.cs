@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.listTabs = new System.Windows.Forms.TabControl();
             this.polesTab = new System.Windows.Forms.TabPage();
@@ -67,7 +67,7 @@
             this.poleLongitude = new System.Windows.Forms.Label();
             this.poleLatitudeTextBox = new System.Windows.Forms.MaskedTextBox();
             this.poleLatitude = new System.Windows.Forms.Label();
-            this.materialComboBox = new System.Windows.Forms.ComboBox();
+            this.poleMaterialComboBox = new System.Windows.Forms.ComboBox();
             this.poleMaterial = new System.Windows.Forms.Label();
             this.poleHeightTextBox = new System.Windows.Forms.MaskedTextBox();
             this.poleHeight = new System.Windows.Forms.Label();
@@ -75,7 +75,6 @@
             this.poleID = new System.Windows.Forms.Label();
             this.type = new System.Windows.Forms.Label();
             this.typeRegistration = new System.Windows.Forms.ComboBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -94,7 +93,6 @@
             this.inspectionRegister.SuspendLayout();
             this.boxRegister.SuspendLayout();
             this.poleRegister.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -139,15 +137,15 @@
             this.poleGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.poleGridView.Location = new System.Drawing.Point(3, 3);
             this.poleGridView.Name = "poleGridView";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.NullValue = "oie";
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.poleGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.NullValue = "oie";
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.poleGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.poleGridView.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.poleGridView.Size = new System.Drawing.Size(414, 267);
             this.poleGridView.TabIndex = 0;
@@ -196,6 +194,7 @@
             // 
             // registerTab
             // 
+            this.registerTab.Controls.Add(this.inspectionRegister);
             this.registerTab.Controls.Add(this.boxRegister);
             this.registerTab.Controls.Add(this.poleRegister);
             this.registerTab.Controls.Add(this.type);
@@ -220,7 +219,7 @@
             this.inspectionRegister.Controls.Add(this.label9);
             this.inspectionRegister.Controls.Add(this.inspectionPoleIdTextBox);
             this.inspectionRegister.Controls.Add(this.label10);
-            this.inspectionRegister.Location = new System.Drawing.Point(0, 0);
+            this.inspectionRegister.Location = new System.Drawing.Point(9, 33);
             this.inspectionRegister.Name = "inspectionRegister";
             this.inspectionRegister.Size = new System.Drawing.Size(201, 192);
             this.inspectionRegister.TabIndex = 23;
@@ -311,11 +310,12 @@
             // 
             // inspectionPoleIdTextBox
             // 
+            this.inspectionPoleIdTextBox.AllowPromptAsInput = false;
+            this.inspectionPoleIdTextBox.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.inspectionPoleIdTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.inspectionPoleIdTextBox.Location = new System.Drawing.Point(59, 3);
-            this.inspectionPoleIdTextBox.Mask = "99999999999999999999";
+            this.inspectionPoleIdTextBox.Mask = "999999999999999999999999999999999";
             this.inspectionPoleIdTextBox.Name = "inspectionPoleIdTextBox";
-            this.inspectionPoleIdTextBox.PromptChar = ' ';
             this.inspectionPoleIdTextBox.Size = new System.Drawing.Size(126, 20);
             this.inspectionPoleIdTextBox.TabIndex = 9;
             this.inspectionPoleIdTextBox.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
@@ -331,7 +331,6 @@
             // 
             // boxRegister
             // 
-            this.boxRegister.Controls.Add(this.inspectionRegister);
             this.boxRegister.Controls.Add(this.boxWattsTextBox);
             this.boxRegister.Controls.Add(this.boxTypeComboBox);
             this.boxRegister.Controls.Add(this.boxLongitudeTextBox);
@@ -362,7 +361,7 @@
             this.boxTypeComboBox.FormattingEnabled = true;
             this.boxTypeComboBox.Items.AddRange(new object[] {
             "Externa",
-            "Interna"});
+            "Subterrânea"});
             this.boxTypeComboBox.Location = new System.Drawing.Point(59, 29);
             this.boxTypeComboBox.Name = "boxTypeComboBox";
             this.boxTypeComboBox.Size = new System.Drawing.Size(126, 21);
@@ -455,7 +454,7 @@
             this.poleRegister.Controls.Add(this.poleLongitude);
             this.poleRegister.Controls.Add(this.poleLatitudeTextBox);
             this.poleRegister.Controls.Add(this.poleLatitude);
-            this.poleRegister.Controls.Add(this.materialComboBox);
+            this.poleRegister.Controls.Add(this.poleMaterialComboBox);
             this.poleRegister.Controls.Add(this.poleMaterial);
             this.poleRegister.Controls.Add(this.poleHeightTextBox);
             this.poleRegister.Controls.Add(this.poleHeight);
@@ -524,18 +523,18 @@
             this.poleLatitude.TabIndex = 15;
             this.poleLatitude.Text = "Latitude";
             // 
-            // materialComboBox
+            // poleMaterialComboBox
             // 
-            this.materialComboBox.FormattingEnabled = true;
-            this.materialComboBox.Items.AddRange(new object[] {
+            this.poleMaterialComboBox.FormattingEnabled = true;
+            this.poleMaterialComboBox.Items.AddRange(new object[] {
             "Concreto",
             "Madeira",
             "Metal"});
-            this.materialComboBox.Location = new System.Drawing.Point(59, 55);
-            this.materialComboBox.Name = "materialComboBox";
-            this.materialComboBox.Size = new System.Drawing.Size(126, 21);
-            this.materialComboBox.TabIndex = 14;
-            this.materialComboBox.Text = "[Selecione]";
+            this.poleMaterialComboBox.Location = new System.Drawing.Point(59, 55);
+            this.poleMaterialComboBox.Name = "poleMaterialComboBox";
+            this.poleMaterialComboBox.Size = new System.Drawing.Size(126, 21);
+            this.poleMaterialComboBox.TabIndex = 14;
+            this.poleMaterialComboBox.Text = "[Selecione]";
             // 
             // poleMaterial
             // 
@@ -606,17 +605,6 @@
             this.typeRegistration.Size = new System.Drawing.Size(126, 21);
             this.typeRegistration.TabIndex = 0;
             this.typeRegistration.SelectedIndexChanged += new System.EventHandler(this.typeRegistration_SelectedIndexChanged);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.Image = global::Inspections.Properties.Resources.detalhes;
-            this.pictureBox3.Location = new System.Drawing.Point(307, 412);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -706,7 +694,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(451, 460);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.listTabs);
@@ -728,7 +715,6 @@
             this.boxRegister.PerformLayout();
             this.poleRegister.ResumeLayout(false);
             this.poleRegister.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -745,7 +731,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TabControl listTabs;
         private System.Windows.Forms.TabPage polesTab;
         private System.Windows.Forms.TabPage boxesTab;
@@ -768,7 +753,7 @@
         private System.Windows.Forms.Label poleLongitude;
         private System.Windows.Forms.MaskedTextBox poleLatitudeTextBox;
         private System.Windows.Forms.Label poleLatitude;
-        private System.Windows.Forms.ComboBox materialComboBox;
+        private System.Windows.Forms.ComboBox poleMaterialComboBox;
         private System.Windows.Forms.Label poleMaterial;
         private System.Windows.Forms.MaskedTextBox poleHeightTextBox;
         private System.Windows.Forms.Label poleHeight;

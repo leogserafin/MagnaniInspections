@@ -120,11 +120,33 @@ namespace Inspections
         private void typeRegistration_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (typeRegistration.Text.Equals("Caixa"))
+            {
+                boxRegister.Visible = true;
+                poleRegister.Visible = false;
+                inspectionRegister.Visible = false;
                 boxRegister.BringToFront();
+            }
             else if (typeRegistration.Text.Equals("Poste"))
+            {
+                poleIdTextBox.Text = "";
+                poleHeightTextBox.Text = "";
+                poleMaterialComboBox.Text = "";
+                poleLatitudeTextBox.Text = "";
+                poleLongitudeTextBox.Text = "";
+                poleBoxIdTextBox.Text = "";
+                poleRegister.Visible = true;
+                boxRegister.Visible = false;
+                inspectionRegister.Visible = false;
                 poleRegister.BringToFront();
+            }
             else if (typeRegistration.Text.Equals("Inspeção"))
+            {
+                inspectionRegister.Visible = true;
+                boxRegister.Visible = false;
+                poleRegister.Visible = false;
                 inspectionRegister.BringToFront();
+            }
         }
+
     }
 }
