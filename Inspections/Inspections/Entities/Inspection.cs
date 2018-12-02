@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Inspections.DataBase;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -10,29 +11,25 @@ namespace Inspections.Entities
     [Table("Inspection")]
     class Inspection
     {
-        public int id { get; set; }
-        public string bob { get; set; }
-        public string poleWiring { get; set; }
-        public string poleSituation { get; set; }
-        public int poleID { get; set;}
-        public DateTime date { get; set; }
+        public int Id { get; set; }
+        public string Bob { get; set; }
+        public string PoleWiring { get; set; }
+        public string PoleSituation { get; set; }
+        public int PoleID { get; set;}
+        public DateTime Date { get; set; }
 
         public static List<Inspection> Inspections()
         {
             var inspectionsList = new List<Inspection>();
 
-            Inspection inspectionTest = new Inspection
-            {
-                id = 0,
-                date = new DateTime(2018, 2, 15),
-                bob = "Uma bosta",
-                poleWiring = "Caindo tudo",
-                poleSituation = "Deprimente"
-            };
-
-            inspectionsList.Add(inspectionTest);
+            DAL dal = new DAL();
+            dal.Inspections.ToList()
+                .ForEach(inspection => inspectionsList.Add(inspection));
 
             return inspectionsList;
         }
+            
+          
     }
 }
+

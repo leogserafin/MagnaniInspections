@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using Inspections.DataBase;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace Inspections.Entities
 {
@@ -17,17 +19,9 @@ namespace Inspections.Entities
         {
             var polesList = new List<Pole>();
 
-            var poleTest = new Pole
-            {
-                Id = 0,
-                Height = 25.2,
-                Material = "Madeira",
-                Latitude = 55.3M,
-                Longitude = 99.3M,
-                BoxID = 0
-            };
-
-            polesList.Add(poleTest);
+            DAL dal = new DAL();
+            dal.Poles.ToList()
+                .ForEach(pole => polesList.Add(pole));
 
             return polesList;
         }

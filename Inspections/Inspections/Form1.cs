@@ -130,14 +130,14 @@ namespace Inspections
             boxGridView.DataSource = boxesList.ToList();
 
             var inspectionsList = from inspection in Inspection.Inspections()
-                                  orderby inspection.id
+                                  orderby inspection.Id
                                   select new
                                   {
-                                      Código = inspection.id,
-                                      Estado = inspection.poleSituation,
-                                      Fiação = inspection.poleWiring,
-                                      Prumo = inspection.bob,
-                                      Data = inspection.date
+                                      Código = inspection.Id,
+                                      Estado = inspection.PoleSituation,
+                                      Fiação = inspection.PoleWiring,
+                                      Prumo = inspection.Bob,
+                                      Data = inspection.Date
 
                                   };
             inspectionGridView.DataSource = inspectionsList.ToList();
