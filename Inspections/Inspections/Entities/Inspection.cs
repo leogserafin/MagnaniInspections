@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Inspections.Entities
 {
+    [Table("Inspection")]
     class Inspection
     {
         public int id { get; set; }
@@ -19,12 +21,14 @@ namespace Inspections.Entities
         {
             var inspectionsList = new List<Inspection>();
 
-            var inspectionTest = new Inspection();
-            inspectionTest.id = 0;
-            inspectionTest.date = new DateTime(2018, 2, 15);
-            inspectionTest.bob = "Uma bosta";
-            inspectionTest.poleWiring = "Caindo tudo";
-            inspectionTest.poleSituation = "Deprimente";
+            Inspection inspectionTest = new Inspection
+            {
+                id = 0,
+                date = new DateTime(2018, 2, 15),
+                bob = "Uma bosta",
+                poleWiring = "Caindo tudo",
+                poleSituation = "Deprimente"
+            };
 
             inspectionsList.Add(inspectionTest);
 

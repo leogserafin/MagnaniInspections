@@ -1,31 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Inspections.Entities
 {
+    [Table("Pole")]
     class Pole
     {
-        public int id { get; set; }
-        public double height { get; set; }
-        public string material { get; set; }
-        public decimal latitude { get; set; }
-        public decimal longitude { get; set; }
-        public int boxID { get; set; }
+        public int Id { get; set; }
+        public double Height { get; set; }
+        public string Material { get; set; }
+        public decimal Latitude { get; set; }
+        public decimal Longitude { get; set; }
+        public int BoxID { get; set; }
 
         public static List<Pole> Poles()
         {
             var polesList = new List<Pole>();
 
-            var poleTest = new Pole();
-            poleTest.id = 0;
-            poleTest.height = 25.2;
-            poleTest.material = "Madeira";
-            poleTest.latitude = 55.3M;
-            poleTest.longitude = 99.3M;
-            poleTest.boxID = 0;
+            var poleTest = new Pole
+            {
+                Id = 0,
+                Height = 25.2,
+                Material = "Madeira",
+                Latitude = 55.3M,
+                Longitude = 99.3M,
+                BoxID = 0
+            };
 
             polesList.Add(poleTest);
 

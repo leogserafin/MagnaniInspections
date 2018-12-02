@@ -39,11 +39,11 @@
             this.inspectionGridView = new System.Windows.Forms.DataGridView();
             this.registerTab = new System.Windows.Forms.TabPage();
             this.inspectionRegister = new System.Windows.Forms.Panel();
-            this.wiringComboBox = new System.Windows.Forms.ComboBox();
-            this.bobComboBox = new System.Windows.Forms.ComboBox();
+            this.inspectionWiringComboBox = new System.Windows.Forms.ComboBox();
+            this.inspectionBobComboBox = new System.Windows.Forms.ComboBox();
             this.inspectionDate = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.situationComboBox = new System.Windows.Forms.ComboBox();
+            this.inspectionSituationComboBox = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -61,6 +61,7 @@
             this.boxIdTextBox = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.poleRegister = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.poleBoxIdTextBox = new System.Windows.Forms.MaskedTextBox();
             this.boxID_FK = new System.Windows.Forms.Label();
             this.poleLongitudeTextBox = new System.Windows.Forms.MaskedTextBox();
@@ -75,13 +76,13 @@
             this.poleID = new System.Windows.Forms.Label();
             this.type = new System.Windows.Forms.Label();
             this.typeRegistration = new System.Windows.Forms.ComboBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.boxesPictureBox = new System.Windows.Forms.PictureBox();
             this.polesPictureBox = new System.Windows.Forms.PictureBox();
             this.inspectionsPictureBox = new System.Windows.Forms.PictureBox();
             this.reportsPictureBox = new System.Windows.Forms.PictureBox();
+            this.insertNewPictureBox = new System.Windows.Forms.PictureBox();
+            this.deleteRegisterPictureBox = new System.Windows.Forms.PictureBox();
             this.listTabs.SuspendLayout();
             this.polesTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.poleGridView)).BeginInit();
@@ -93,13 +94,13 @@
             this.inspectionRegister.SuspendLayout();
             this.boxRegister.SuspendLayout();
             this.poleRegister.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.boxesPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.polesPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inspectionsPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportsPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.insertNewPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deleteRegisterPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // listTabs
@@ -209,11 +210,11 @@
             // 
             // inspectionRegister
             // 
-            this.inspectionRegister.Controls.Add(this.wiringComboBox);
-            this.inspectionRegister.Controls.Add(this.bobComboBox);
+            this.inspectionRegister.Controls.Add(this.inspectionWiringComboBox);
+            this.inspectionRegister.Controls.Add(this.inspectionBobComboBox);
             this.inspectionRegister.Controls.Add(this.inspectionDate);
             this.inspectionRegister.Controls.Add(this.label1);
-            this.inspectionRegister.Controls.Add(this.situationComboBox);
+            this.inspectionRegister.Controls.Add(this.inspectionSituationComboBox);
             this.inspectionRegister.Controls.Add(this.label7);
             this.inspectionRegister.Controls.Add(this.label8);
             this.inspectionRegister.Controls.Add(this.label9);
@@ -221,32 +222,32 @@
             this.inspectionRegister.Controls.Add(this.label10);
             this.inspectionRegister.Location = new System.Drawing.Point(9, 33);
             this.inspectionRegister.Name = "inspectionRegister";
-            this.inspectionRegister.Size = new System.Drawing.Size(201, 192);
+            this.inspectionRegister.Size = new System.Drawing.Size(217, 192);
             this.inspectionRegister.TabIndex = 23;
             // 
             // wiringComboBox
             // 
-            this.wiringComboBox.FormattingEnabled = true;
-            this.wiringComboBox.Items.AddRange(new object[] {
+            this.inspectionWiringComboBox.FormattingEnabled = true;
+            this.inspectionWiringComboBox.Items.AddRange(new object[] {
             "Conservada",
             "Deteriorada"});
-            this.wiringComboBox.Location = new System.Drawing.Point(59, 82);
-            this.wiringComboBox.Name = "wiringComboBox";
-            this.wiringComboBox.Size = new System.Drawing.Size(126, 21);
-            this.wiringComboBox.TabIndex = 26;
-            this.wiringComboBox.Text = "[Selecione]";
+            this.inspectionWiringComboBox.Location = new System.Drawing.Point(59, 82);
+            this.inspectionWiringComboBox.Name = "wiringComboBox";
+            this.inspectionWiringComboBox.Size = new System.Drawing.Size(126, 21);
+            this.inspectionWiringComboBox.TabIndex = 26;
+            this.inspectionWiringComboBox.Text = "[Selecione]";
             // 
             // bobComboBox
             // 
-            this.bobComboBox.FormattingEnabled = true;
-            this.bobComboBox.Items.AddRange(new object[] {
+            this.inspectionBobComboBox.FormattingEnabled = true;
+            this.inspectionBobComboBox.Items.AddRange(new object[] {
             "Alinhado",
             "Desalinhado"});
-            this.bobComboBox.Location = new System.Drawing.Point(59, 55);
-            this.bobComboBox.Name = "bobComboBox";
-            this.bobComboBox.Size = new System.Drawing.Size(126, 21);
-            this.bobComboBox.TabIndex = 25;
-            this.bobComboBox.Text = "[Selecione]";
+            this.inspectionBobComboBox.Location = new System.Drawing.Point(59, 55);
+            this.inspectionBobComboBox.Name = "bobComboBox";
+            this.inspectionBobComboBox.Size = new System.Drawing.Size(126, 21);
+            this.inspectionBobComboBox.TabIndex = 25;
+            this.inspectionBobComboBox.Text = "[Selecione]";
             // 
             // inspectionDate
             // 
@@ -271,15 +272,15 @@
             // 
             // situationComboBox
             // 
-            this.situationComboBox.FormattingEnabled = true;
-            this.situationComboBox.Items.AddRange(new object[] {
+            this.inspectionSituationComboBox.FormattingEnabled = true;
+            this.inspectionSituationComboBox.Items.AddRange(new object[] {
             "Conservado",
             "Deteriorado"});
-            this.situationComboBox.Location = new System.Drawing.Point(59, 29);
-            this.situationComboBox.Name = "situationComboBox";
-            this.situationComboBox.Size = new System.Drawing.Size(126, 21);
-            this.situationComboBox.TabIndex = 21;
-            this.situationComboBox.Text = "[Selecione]";
+            this.inspectionSituationComboBox.Location = new System.Drawing.Point(59, 29);
+            this.inspectionSituationComboBox.Name = "situationComboBox";
+            this.inspectionSituationComboBox.Size = new System.Drawing.Size(126, 21);
+            this.inspectionSituationComboBox.TabIndex = 21;
+            this.inspectionSituationComboBox.Text = "[Selecione]";
             // 
             // label7
             // 
@@ -344,7 +345,7 @@
             this.boxRegister.Controls.Add(this.label6);
             this.boxRegister.Location = new System.Drawing.Point(9, 33);
             this.boxRegister.Name = "boxRegister";
-            this.boxRegister.Size = new System.Drawing.Size(201, 192);
+            this.boxRegister.Size = new System.Drawing.Size(217, 192);
             this.boxRegister.TabIndex = 21;
             // 
             // boxWattsTextBox
@@ -449,6 +450,7 @@
             // 
             // poleRegister
             // 
+            this.poleRegister.Controls.Add(this.label11);
             this.poleRegister.Controls.Add(this.poleBoxIdTextBox);
             this.poleRegister.Controls.Add(this.boxID_FK);
             this.poleRegister.Controls.Add(this.poleLongitudeTextBox);
@@ -463,8 +465,17 @@
             this.poleRegister.Controls.Add(this.poleID);
             this.poleRegister.Location = new System.Drawing.Point(9, 33);
             this.poleRegister.Name = "poleRegister";
-            this.poleRegister.Size = new System.Drawing.Size(201, 192);
+            this.poleRegister.Size = new System.Drawing.Size(217, 192);
             this.poleRegister.TabIndex = 8;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(191, 33);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(21, 13);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "cm";
             // 
             // poleBoxIdTextBox
             // 
@@ -549,12 +560,13 @@
             // poleHeightTextBox
             // 
             this.poleHeightTextBox.Location = new System.Drawing.Point(59, 30);
-            this.poleHeightTextBox.Mask = "##.#######";
+            this.poleHeightTextBox.Mask = "9999";
             this.poleHeightTextBox.Name = "poleHeightTextBox";
             this.poleHeightTextBox.PromptChar = ' ';
             this.poleHeightTextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.poleHeightTextBox.Size = new System.Drawing.Size(126, 20);
             this.poleHeightTextBox.TabIndex = 11;
+            this.poleHeightTextBox.ValidatingType = typeof(int);
             // 
             // poleHeight
             // 
@@ -605,30 +617,7 @@
             this.typeRegistration.Name = "typeRegistration";
             this.typeRegistration.Size = new System.Drawing.Size(126, 21);
             this.typeRegistration.TabIndex = 0;
-            this.typeRegistration.SelectedIndexChanged += new System.EventHandler(this.typeRegistration_SelectedIndexChanged);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = global::Inspections.Properties.Resources.incluir;
-            this.pictureBox2.Location = new System.Drawing.Point(353, 412);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.insertNewRegister_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::Inspections.Properties.Resources.excluir;
-            this.pictureBox1.Location = new System.Drawing.Point(399, 412);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.typeRegistration.SelectedIndexChanged += new System.EventHandler(this.TypeRegistration_SelectedIndexChanged);
             // 
             // flowLayoutPanel1
             // 
@@ -652,8 +641,8 @@
             this.boxesPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.boxesPictureBox.TabIndex = 2;
             this.boxesPictureBox.TabStop = false;
-            this.boxesPictureBox.Click += new System.EventHandler(this.energyBoxPictureBox_Click);
-            this.boxesPictureBox.DoubleClick += new System.EventHandler(this.insertNewRegister_Click);
+            this.boxesPictureBox.Click += new System.EventHandler(this.EnergyBoxPictureBox_Click);
+            this.boxesPictureBox.DoubleClick += new System.EventHandler(this.InsertNewRegister_Click);
             // 
             // polesPictureBox
             // 
@@ -664,8 +653,8 @@
             this.polesPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.polesPictureBox.TabIndex = 3;
             this.polesPictureBox.TabStop = false;
-            this.polesPictureBox.Click += new System.EventHandler(this.polesPictureBox_Click);
-            this.polesPictureBox.DoubleClick += new System.EventHandler(this.insertNewRegister_Click);
+            this.polesPictureBox.Click += new System.EventHandler(this.PolesPictureBox_Click);
+            this.polesPictureBox.DoubleClick += new System.EventHandler(this.InsertNewRegister_Click);
             // 
             // inspectionsPictureBox
             // 
@@ -676,8 +665,8 @@
             this.inspectionsPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.inspectionsPictureBox.TabIndex = 4;
             this.inspectionsPictureBox.TabStop = false;
-            this.inspectionsPictureBox.Click += new System.EventHandler(this.inspectionsPictureBox_Click);
-            this.inspectionsPictureBox.DoubleClick += new System.EventHandler(this.insertNewRegister_Click);
+            this.inspectionsPictureBox.Click += new System.EventHandler(this.InspectionsPictureBox_Click);
+            this.inspectionsPictureBox.DoubleClick += new System.EventHandler(this.InsertNewRegister_Click);
             // 
             // reportsPictureBox
             // 
@@ -689,14 +678,38 @@
             this.reportsPictureBox.TabIndex = 5;
             this.reportsPictureBox.TabStop = false;
             // 
+            // insertNewPictureBox
+            // 
+            this.insertNewPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.insertNewPictureBox.Image = global::Inspections.Properties.Resources.incluir;
+            this.insertNewPictureBox.Location = new System.Drawing.Point(353, 412);
+            this.insertNewPictureBox.Name = "insertNewPictureBox";
+            this.insertNewPictureBox.Size = new System.Drawing.Size(40, 40);
+            this.insertNewPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.insertNewPictureBox.TabIndex = 2;
+            this.insertNewPictureBox.TabStop = false;
+            this.insertNewPictureBox.Click += new System.EventHandler(this.InsertNewRegister_Click);
+            // 
+            // deleteRegisterPictureBox
+            // 
+            this.deleteRegisterPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.deleteRegisterPictureBox.Image = global::Inspections.Properties.Resources.excluir;
+            this.deleteRegisterPictureBox.Location = new System.Drawing.Point(399, 412);
+            this.deleteRegisterPictureBox.Name = "deleteRegisterPictureBox";
+            this.deleteRegisterPictureBox.Size = new System.Drawing.Size(40, 40);
+            this.deleteRegisterPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.deleteRegisterPictureBox.TabIndex = 0;
+            this.deleteRegisterPictureBox.TabStop = false;
+            this.deleteRegisterPictureBox.Click += new System.EventHandler(this.DeleteRegisterPictureBox_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(451, 460);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.insertNewPictureBox);
+            this.Controls.Add(this.deleteRegisterPictureBox);
             this.Controls.Add(this.listTabs);
             this.MinimumSize = new System.Drawing.Size(467, 498);
             this.Name = "Form1";
@@ -716,22 +729,20 @@
             this.boxRegister.PerformLayout();
             this.poleRegister.ResumeLayout(false);
             this.poleRegister.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.boxesPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.polesPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inspectionsPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportsPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.insertNewPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deleteRegisterPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panelGrids;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox deleteRegisterPictureBox;
+        private System.Windows.Forms.PictureBox insertNewPictureBox;
         private System.Windows.Forms.TabControl listTabs;
         private System.Windows.Forms.TabPage polesTab;
         private System.Windows.Forms.TabPage boxesTab;
@@ -761,11 +772,11 @@
         private System.Windows.Forms.MaskedTextBox poleIdTextBox;
         private System.Windows.Forms.Label poleID;
         private System.Windows.Forms.Panel inspectionRegister;
-        private System.Windows.Forms.ComboBox wiringComboBox;
-        private System.Windows.Forms.ComboBox bobComboBox;
+        private System.Windows.Forms.ComboBox inspectionWiringComboBox;
+        private System.Windows.Forms.ComboBox inspectionBobComboBox;
         private System.Windows.Forms.MaskedTextBox inspectionDate;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox situationComboBox;
+        private System.Windows.Forms.ComboBox inspectionSituationComboBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -782,6 +793,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MaskedTextBox boxIdTextBox;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label11;
     }
 }
 

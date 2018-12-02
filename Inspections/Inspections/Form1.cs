@@ -9,11 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Inspections
 {
 
     public partial class Form1 : Form
     {
+        private int lastWindow;
+        private enum LastWindow { Box, Pole, Inspection };
 
         public Form1()
         {
@@ -21,64 +24,107 @@ namespace Inspections
             listTabs.Controls.Remove(inspectionsTab);
             listTabs.Controls.Remove(boxesTab);
             listTabs.Controls.Remove(registerTab);
-            insertValuesInGrids();
+            InsertValuesInGrids();
         }
 
-        private void polesPictureBox_Click(object sender, EventArgs e)
+        private void PolesPictureBox_Click(object sender, EventArgs e)
         {
-            listTabs.Controls.Remove(boxesTab);
-            listTabs.Controls.Remove(inspectionsTab);
-            listTabs.Controls.Remove(polesTab);
-            listTabs.Controls.Remove(registerTab);
-            listTabs.Controls.Add(polesTab);
+            lastWindow = (int)LastWindow.Pole;
+            if (listTabs.Controls.Contains(registerTab))
+            {
+                DialogResult dr = MessageBox.Show("Deseja cancelar a inclusão?", "Voltar", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
+                    listTabs.Controls.Remove(registerTab);
+            }
+
+            if (listTabs.Controls.Contains(boxesTab))
+                listTabs.Controls.Remove(boxesTab);
+
+            if (listTabs.Controls.Contains(inspectionsTab))
+                listTabs.Controls.Remove(inspectionsTab);
+
+            if (!listTabs.Controls.Contains(polesTab))
+            {
+                insertNewPictureBox.Image = Properties.Resources.incluir;
+                deleteRegisterPictureBox.Image = Properties.Resources.excluir;
+                listTabs.Controls.Add(polesTab);
+            }
+            
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
+        private void InspectionsPictureBox_Click(object sender, EventArgs e)
         {
+            lastWindow = (int)LastWindow.Inspection;
 
+            if (listTabs.Controls.Contains(registerTab))
+            {
+                DialogResult dr = MessageBox.Show("Deseja cancelar a inclusão?", "Voltar", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
+                    listTabs.Controls.Remove(registerTab);
+            }
+
+            if (listTabs.Controls.Contains(boxesTab))
+                listTabs.Controls.Remove(boxesTab);
+
+            if (listTabs.Controls.Contains(polesTab))
+                listTabs.Controls.Remove(polesTab);
+
+            if (!listTabs.Controls.Contains(inspectionsTab))
+            {
+                deleteRegisterPictureBox.Image = Properties.Resources.excluir;
+                insertNewPictureBox.Image = Properties.Resources.incluir;
+                listTabs.Controls.Add(inspectionsTab);
+            }
+            
         }
 
-        private void inspectionsPictureBox_Click(object sender, EventArgs e)
+        private void EnergyBoxPictureBox_Click(object sender, EventArgs e)
         {
-            listTabs.Controls.Remove(boxesTab);
-            listTabs.Controls.Remove(polesTab);
-            listTabs.Controls.Remove(inspectionsTab);
-            listTabs.Controls.Remove(registerTab);
-            listTabs.Controls.Add(inspectionsTab);
+            lastWindow = (int)LastWindow.Box;
+            if (listTabs.Controls.Contains(registerTab))
+            {
+                DialogResult dr = MessageBox.Show("Deseja cancelar a inclusão?", "Voltar", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
+                    listTabs.Controls.Remove(registerTab);
+            }
+            if (listTabs.Controls.Contains(inspectionsTab))
+                listTabs.Controls.Remove(inspectionsTab);
+
+            if (listTabs.Controls.Contains(polesTab))
+                listTabs.Controls.Remove(polesTab);
+
+            if (!listTabs.Controls.Contains(boxesTab))
+            {
+                listTabs.Controls.Add(boxesTab);
+                deleteRegisterPictureBox.Image = Properties.Resources.excluir;
+                insertNewPictureBox.Image = Properties.Resources.incluir;
+            }
+            
+            
         }
 
-        private void energyBoxPictureBox_Click(object sender, EventArgs e)
-        {
-            listTabs.Controls.Remove(polesTab);
-            listTabs.Controls.Remove(inspectionsTab);
-            listTabs.Controls.Remove(boxesTab);
-            listTabs.Controls.Remove(registerTab);
-            listTabs.Controls.Add(boxesTab);
-        }
-
-        private void insertValuesInGrids()
+        private void InsertValuesInGrids()
         {
             var polesList = from pole in Pole.Poles()
-                            orderby pole.id
+                            orderby pole.Id
                             select new
                             {
-                                Código = pole.id,
-                                Altura = pole.height,
-                                Material = pole.material,
-                                Localização = pole.latitude + ":" + pole.longitude,
-                                Caixa = pole.boxID
+                                Código = pole.Id,
+                                Altura = pole.Height,
+                                pole.Material,
+                                Localização = pole.Latitude + ":" + pole.Longitude,
+                                Caixa = pole.BoxID
                             };
             poleGridView.DataSource = polesList.ToList();
 
             var boxesList = from box in Box.Boxes()
-                            orderby box.id
+                            orderby box.Id
                             select new
                             {
-                                Código = box.id,
-                                Tipo = box.type,
-                                Watts = box.watts,
-                                Localização = box.latitude + ":" + box.longitude,
+                                Código = box.Id,
+                                Tipo = box.GetBoxType(),
+                                box.Watts,
+                                Localização = box.Latitude + ":" + box.Longitude,
 
                             };
             boxGridView.DataSource = boxesList.ToList();
@@ -97,37 +143,73 @@ namespace Inspections
             inspectionGridView.DataSource = inspectionsList.ToList();
         }
 
-        private void insertNewRegister_Click(object sender, EventArgs e)
+        private void InsertNewRegister_Click(object sender, EventArgs e)
         {
-            if (listTabs.Controls.Contains(polesTab))
+            if (!listTabs.Controls.Contains(registerTab))
             {
-                listTabs.Controls.Remove(polesTab);
-                typeRegistration.Text = "Poste";
+                deleteRegisterPictureBox.Image = Properties.Resources.voltar;
+                insertNewPictureBox.Image = Properties.Resources.salvar;
+
+                if (listTabs.Controls.Contains(polesTab))
+                {
+                    listTabs.Controls.Remove(polesTab);
+                    typeRegistration.Text = "Poste";
+                }
+                if (listTabs.Controls.Contains(boxesTab))
+                {
+                    listTabs.Controls.Remove(boxesTab);
+                    typeRegistration.Text = "Caixa";
+                }
+                if (listTabs.Controls.Contains(inspectionsTab))
+                {
+                    listTabs.Controls.Remove(inspectionsTab);
+                    typeRegistration.Text = "Inspeção";
+                }
+                if (!listTabs.Controls.Contains(registerTab))
+                    listTabs.Controls.Add(registerTab);
+
             }
-            if (listTabs.Controls.Contains(boxesTab))
+            else
+
             {
-                listTabs.Controls.Remove(boxesTab);
-                typeRegistration.Text = "Caixa";
+                if (typeRegistration.Text == "Poste")
+                {
+                    MessageBox.Show("Poste");
+                }
+                if (typeRegistration.Text == "Caixa")
+                {
+                    int boxID = Convert.ToInt32(boxIdTextBox.Text);
+                    char boxType = Convert.ToChar(boxTypeComboBox.Text);
+                    int boxWatts = Convert.ToInt32(boxWattsTextBox.Text);
+                    double boxLat = Convert.ToDouble(boxLatitudeTextBox.Text);
+                    double boxLong = Convert.ToDouble(boxLongitudeTextBox.Text);
+
+
+                }
+                if (typeRegistration.Text == "Inspeção")
+                {
+                    MessageBox.Show("Inspeção");
+                }
             }
-            if (listTabs.Controls.Contains(inspectionsTab))
-            {
-                listTabs.Controls.Remove(inspectionsTab);
-                typeRegistration.Text = "Inspeção";
-            }
-            listTabs.Controls.Add(registerTab);
         }
 
-        private void typeRegistration_SelectedIndexChanged(object sender, EventArgs e)
+        private void TypeRegistration_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (typeRegistration.Text.Equals("Caixa"))
             {
+                lastWindow = (int)LastWindow.Box;
+                boxIdTextBox.Text = "";
+                boxTypeComboBox.Text = "[Selecione]";
+                boxWattsTextBox.Text = "";
+                boxLatitudeTextBox.Text = "";
+                boxLongitudeTextBox.Text = "";
                 boxRegister.Visible = true;
                 poleRegister.Visible = false;
                 inspectionRegister.Visible = false;
-                boxRegister.BringToFront();
             }
             else if (typeRegistration.Text.Equals("Poste"))
             {
+                lastWindow = (int)LastWindow.Pole;
                 poleIdTextBox.Text = "";
                 poleHeightTextBox.Text = "";
                 poleMaterialComboBox.Text = "";
@@ -137,16 +219,46 @@ namespace Inspections
                 poleRegister.Visible = true;
                 boxRegister.Visible = false;
                 inspectionRegister.Visible = false;
-                poleRegister.BringToFront();
             }
             else if (typeRegistration.Text.Equals("Inspeção"))
             {
+                lastWindow = (int)LastWindow.Inspection;
+                inspectionPoleIdTextBox.Text = "";
+                inspectionSituationComboBox.Text = "[Selecione]";
+                inspectionBobComboBox.Text = "[Selecione]";
+                inspectionWiringComboBox.Text = "[Selecione]";
+                inspectionDate.Text = "";
                 inspectionRegister.Visible = true;
                 boxRegister.Visible = false;
                 poleRegister.Visible = false;
-                inspectionRegister.BringToFront();
             }
         }
 
+        private void DeleteRegisterPictureBox_Click(object sender, EventArgs e)
+        {
+            if (listTabs.Controls.Contains(registerTab))
+            {
+                
+                DialogResult dr = MessageBox.Show("Deseja cancelar a inclusão?", "Voltar", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
+                {
+                    if (lastWindow == (int)LastWindow.Box)
+                    {
+                        listTabs.Controls.Add(boxesTab);
+                    }
+                    if (lastWindow == (int)LastWindow.Pole)
+                    {
+                        listTabs.Controls.Add(polesTab);
+                    }
+                    if (lastWindow == (int)LastWindow.Inspection)
+                    {
+                        listTabs.Controls.Add(inspectionsTab);
+                    }
+                    listTabs.Controls.Remove(registerTab);
+                    insertNewPictureBox.Image = Properties.Resources.incluir;
+                    deleteRegisterPictureBox.Image = Properties.Resources.excluir;
+                }
+            }
+        }
     }
 }

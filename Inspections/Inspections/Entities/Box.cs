@@ -1,33 +1,37 @@
-﻿using System;
+﻿using Inspections.DataBase;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Inspections.Entities
 {
+    [Table("Box")]
     class Box
     {
-        public int id { get; set; }
-        public string type { get; set; }
-        public int watts { get; set; }
-        public decimal latitude { get; set; }
-        public decimal longitude { get; set; }
+        public int Id { get; set; }
+        public string BoxType { get; set; }
+        public int Watts { get; set; }
+        public decimal Latitude { get; set; }
+        public decimal Longitude { get; set; }
 
         public static List<Box> Boxes()
         {
             var boxesList = new List<Box>();
 
-            var boxTest = new Box();
-            boxTest.id = 0;
-            boxTest.type = "Externa";
-            boxTest.watts = 9001;
-            boxTest.latitude = 12.2M;
-            boxTest.longitude = 54.1M;
-
-            boxesList.Add(boxTest);
+            DAL dal = new DAL();
+            dal.Boxes.ToList()
+                .ForEach(box => boxesList.Add(box));
 
             return boxesList;
         }
+
+        public string GetBoxType()
+        {
+            return BoxType == "E" ? "Externa" : "Subterrânea";
+        }
+
     }
 }
