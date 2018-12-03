@@ -1,28 +1,32 @@
 ﻿using Inspections.DataBase;
+using Npgsql;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Inspections.Entities
 {
-    [Table("Box")]
+    [Table("box")]
     class Box
     {
-        public int Id { get; set; }
-        public string BoxType { get; set; }
-        public int Watts { get; set; }
-        public decimal Latitude { get; set; }
-        public decimal Longitude { get; set; }
+        public int id { get; set; }
+        public string boxtype { get; set; }
+        public int watts { get; set; }
+        public string latitude { get; set; }
+        public string longitude { get; set; }
+        private static CRUD crud = new CRUD();
 
         public static List<Box> Boxes()
         {
             var boxesList = new List<Box>();
 
-            DAL dal = new DAL();
-            dal.Boxes.ToList()
+            crud.Boxes.ToList()
                 .ForEach(box => boxesList.Add(box));
 
             return boxesList;
@@ -30,7 +34,19 @@ namespace Inspections.Entities
 
         public string GetBoxType()
         {
-            return BoxType == "E" ? "Externa" : "Subterrânea";
+            return boxtype == "E" ? "Externa" : "Subterrânea";
+        }
+
+        public void InsertBox(Box box)
+        {
+            string insert = $"INSERT INTO dbo.box(id, boxtype, watts, latitude, longitude) VALUES ({box.id}, '{box.boxtype}', {box.watts}, '{box.latitude}', '{box.longitude}')";
+            crud.Database.ExecuteSqlCommand(insert);
+        }
+
+        public void RemoveBox(int id)
+        {
+            string delete = $"DELETE from dbo.box WHERE id = {id};";
+            crud.Database.ExecuteSqlCommand(delete);
         }
 
     }

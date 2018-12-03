@@ -41,8 +41,6 @@ C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspecti
 C:\Users\João Gohr\Documents\GitHub\MagnaniInspections\Inspections\Inspections\bin\Debug\Inspections.exe.config
 C:\Users\João Gohr\Documents\GitHub\MagnaniInspections\Inspections\Inspections\bin\Debug\Inspections.exe
 C:\Users\João Gohr\Documents\GitHub\MagnaniInspections\Inspections\Inspections\bin\Debug\Inspections.pdb
-C:\Users\João Gohr\Documents\GitHub\MagnaniInspections\Inspections\Inspections\obj\Debug\Inspections.csprojAssemblyReference.cache
-C:\Users\João Gohr\Documents\GitHub\MagnaniInspections\Inspections\Inspections\obj\Debug\Inspections.Form1.resources
 C:\Users\João Gohr\Documents\GitHub\MagnaniInspections\Inspections\Inspections\obj\Debug\Inspections.Properties.Resources.resources
 C:\Users\João Gohr\Documents\GitHub\MagnaniInspections\Inspections\Inspections\obj\Debug\Inspections.csproj.GenerateResource.cache
 C:\Users\João Gohr\Documents\GitHub\MagnaniInspections\Inspections\Inspections\obj\Debug\Inspections.csproj.CoreCompileInputs.cache
@@ -272,3 +270,6 @@ C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspecti
 C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\bin\Debug\System.ValueTuple.xml
 C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\obj\Debug\Inspections.exe.config
 C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\obj\Debug\Inspections.csproj.CopyComplete
+C:\Users\João Gohr\Documents\GitHub\MagnaniInspections\Inspections\Inspections\obj\Debug\Inspections.csprojAssemblyReference.cache
+C:\Users\João Gohr\Documents\GitHub\MagnaniInspections\Inspections\Inspections\obj\Debug\Inspections.deleteById.resources
+C:\Users\João Gohr\Documents\GitHub\MagnaniInspections\Inspections\Inspections\obj\Debug\Inspections.Main.resources

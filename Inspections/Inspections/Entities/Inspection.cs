@@ -8,22 +8,22 @@ using System.Threading.Tasks;
 
 namespace Inspections.Entities
 {
-    [Table("Inspection")]
+    [Table("inspection")]
     class Inspection
     {
-        public int Id { get; set; }
-        public string Bob { get; set; }
-        public string PoleWiring { get; set; }
-        public string PoleSituation { get; set; }
-        public int PoleID { get; set;}
-        public DateTime Date { get; set; }
+        public int id { get; set; }
+        public string bob { get; set; }
+        public string polewiring { get; set; }
+        public string polesituation { get; set; }
+        public int poleid { get; set;}
+        public DateTime date { get; set; }
 
         public static List<Inspection> Inspections()
         {
             var inspectionsList = new List<Inspection>();
 
-            DAL dal = new DAL();
-            dal.Inspections.ToList()
+            CRUD crud = new CRUD();
+            crud.Inspections.ToList()
                 .ForEach(inspection => inspectionsList.Add(inspection));
 
             return inspectionsList;
