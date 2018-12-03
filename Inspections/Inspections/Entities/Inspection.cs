@@ -17,6 +17,7 @@ namespace Inspections.Entities
         public string polesituation { get; set; }
         public int poleid { get; set;}
         public DateTime date { get; set; }
+        private static CRUD crud = new CRUD();
 
         public static List<Inspection> Inspections()
         {
@@ -29,7 +30,17 @@ namespace Inspections.Entities
             return inspectionsList;
         }
             
-          
+         public void InsertInspection(Inspection inspection)
+        {
+            string insert = $"INSERT INTO dbo.inspection(id, date, polesituation, bob, polewiring, poleid) VALUES ({inspection.id}, '{inspection.date}', '{inspection.polesituation}', '{inspection.bob}', '{inspection.polewiring}', '{inspection.poleid}')";
+            crud.Database.ExecuteSqlCommand(insert);
+        }
+
+        public void RemoveBox(int id)
+        {
+            string delete = $"DELETE from dbo.inspection WHERE id = {id};";
+            crud.Database.ExecuteSqlCommand(delete);
+        }
     }
 }
 
