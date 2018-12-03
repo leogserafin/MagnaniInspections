@@ -13,12 +13,12 @@ using System.Windows.Forms;
 namespace Inspections
 {
 
-    public partial class Main : Form
+    public partial class MainForm : Form
     {
         private int lastWindow;
         private enum Window { Box, Pole, Inspection };
 
-        public Main()
+        public MainForm()
         {
             InitializeComponent();
             listTabs.Controls.Remove(inspectionsTab);
@@ -117,7 +117,7 @@ namespace Inspections
                                 {
                                     Código = pole.id,
                                     Altura = pole.height,
-                                    pole.material,
+                                    Material = pole.material,
                                     Localização = pole.latitude + ":" + pole.longitude,
                                     Caixa = pole.boxid
                                 };
@@ -132,7 +132,7 @@ namespace Inspections
                                 {
                                     Código = box.id,
                                     Tipo = box.GetBoxType(),
-                                    box.watts,
+                                    Watts = box.watts,
                                     Localização = box.latitude + ":" + box.longitude,
 
                                 };
@@ -280,7 +280,7 @@ namespace Inspections
             else
             {
                 deleteById deleteById = new deleteById();
-                deleteById.Show();
+                deleteById.ShowDialog();
                 InsertValuesInGrids(Window.Box);
             }
         }

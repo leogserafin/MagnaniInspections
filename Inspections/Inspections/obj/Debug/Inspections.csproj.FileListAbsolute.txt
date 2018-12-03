@@ -272,4 +272,4 @@ C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspecti
 C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\obj\Debug\Inspections.csproj.CopyComplete
 C:\Users\João Gohr\Documents\GitHub\MagnaniInspections\Inspections\Inspections\obj\Debug\Inspections.csprojAssemblyReference.cache
 C:\Users\João Gohr\Documents\GitHub\MagnaniInspections\Inspections\Inspections\obj\Debug\Inspections.deleteById.resources
-C:\Users\João Gohr\Documents\GitHub\MagnaniInspections\Inspections\Inspections\obj\Debug\Inspections.Main.resources
+C:\Users\João Gohr\Documents\GitHub\MagnaniInspections\Inspections\Inspections\obj\Debug\Inspections.MainForm.resources

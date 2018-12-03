@@ -1,6 +1,6 @@
 ﻿namespace Inspections
 {
-    partial class Main
+    partial class MainForm
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.listTabs = new System.Windows.Forms.TabControl();
             this.polesTab = new System.Windows.Forms.TabPage();
             this.poleGridView = new System.Windows.Forms.DataGridView();
