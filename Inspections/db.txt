@@ -1,0 +1,95 @@
+delete from inspection;
+delete from pole;
+delete from box;
+
+INSERT INTO box (id, boxtype, watts, latitude, longitude)
+VALUES 
+	(0, 'E', '1000', '100000', '100000'),
+	(1, 'S', '3000', '103132', '130101'),
+	(2, 'E', '8000', '145470', '454884'),
+	(3, 'S', '4000', '105440', '121240'),
+	(4, 'S', '2000', '110011', '102485'),
+	(5, 'E', '1000', '345440', '107000');
+
+
+	ALTER TABLE inspection ADD PRIMARY KEY (id)
+
+INSERT INTO pole (id, height, material, latitude, longitude, boxid)
+VALUES
+	(6, '124', 'M', '1031', '1031', 0 ),
+	(7, '142', 'F', '1454', '1031', 1 ),
+	(8, '216', 'C', '0313', '1036', 2 ),
+	(9, '322', 'M', '1051', '1037', 3 ),
+	(10, '155', 'F', '1222', '1012', 4 ),
+	(11, '114', 'C', '1111', '1062', 5 ),
+	(12, '124', 'M', '1031', '1031', 0 ),
+	(13, '142', 'F', '1454', '1031', 1 ),
+	(14, '216', 'C', '0313', '1036', 2 ),
+	(15, '322', 'M', '1051', '1037', 3 ),
+	(16, '155', 'F', '1222', '1012', 4 ),
+	(17, '114', 'C', '1111', '1062', 5 );
+
+
+
+ALTER TABLE pole ADD FOREIGN KEY (boxid) REFERENCES box(id);
+
+ALTER TABLE inspection ADD FOREIGN KEY (poleid) REFERENCES pole(id);
+
+DELETE from inspection
+
+INSERT INTO inspection (id, date, polesituation, bob, polewiring, poleid)
+VALUES
+	(1, '2018-02-01', 't', 'f', 't', '0'),
+	(2, '2017-02-03', 't', 'f', 't', '1'),
+	(3, '2018-03-05', 't', 'f', 't', '0'),
+	(4, '2018-05-28', 't', 'f', 't', '2'),
+	(5, '2018-06-11', 't', 'f', 't', '3'),
+	(6, '2018-06-21', 't', 'f', 't', '4'),
+	(7, '2018-08-30', 't', 'f', 't', '5'),
+	(8, '2018-02-01', 't', 'f', 't', '6'),
+	(9, '2017-05-03', 't', 'f', 't', '6'),
+	(10, '2018-03-05', 't', 'f', 't', '7'),
+	(11, '2018-01-28', 't', 'f', 't', '8'),
+	(12, '2018-02-11', 't', 'f', 't', '9'),
+	(13, '2018-12-21', 't', 'f', 't', '10'),
+	(14, '2018-11-30', 't', 'f', 't', '11');
+
+select notinspected
+
+select * from inspection
+select * from pole
+select * from box
+
+insert into box(
+set search_path = dbo
+
+ALTER TABLE pole ALTER COLUMN longitude type varchar(255)
+
+CREATE VIEW notinspected AS
+select id from pole 
+where id not in (select poleid from inspection where date between '2018-01-01' and '2019-01-01')
+
+-- View: dbo.polesnotinspectedinperiod
+
+-- DROP VIEW dbo.polesnotinspectedinperiod;
+
+--SELECT DO RELATORIO DE NAO INSPECIONADOS NO PERIODO DE TEMPO
+ SELECT pole.id
+   FROM dbo.pole
+  WHERE NOT (pole.id IN ( SELECT inspection.poleid
+           FROM dbo.inspection
+          WHERE inspection.date >= '2018-01-01'::date AND inspection.date <= '2019-01-01'::date));
+
+--SELECT DO RELATORIO DE ADEQUADOS E NAO ADEQUADOS NO PERIODO DE TEMPO
+    SELECT TO_CHAR(i.date, 'TMMonth') as "Mês",
+	   TO_CHAR(i.date, 'YYYY') as "Ano",
+	   CASE 
+		WHEN i.polesituation = 't' THEN COUNT(i.poleid)-- AS "Adequados"
+	   END AS "Adequados",
+	   CASE 
+		WHEN i.polesituation = 'f' THEN COUNT(i.poleid)
+	   END AS "Inadequados"
+    FROM dbo.pole p
+    INNER JOIN dbo.inspection i ON (i.poleid = p.id)
+    GROUP BY 1, i.polesituation, 2
+--SELECT DO RELATORIO DE SAUDE DAS CAIXAS POR PERIODO DE TEMPO

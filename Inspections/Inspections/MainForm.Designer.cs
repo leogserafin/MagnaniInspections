@@ -220,7 +220,7 @@
             this.inspectionRegister.Controls.Add(this.label9);
             this.inspectionRegister.Controls.Add(this.inspectionPoleIdTextBox);
             this.inspectionRegister.Controls.Add(this.label10);
-            this.inspectionRegister.Location = new System.Drawing.Point(9, 33);
+            this.inspectionRegister.Location = new System.Drawing.Point(9, 31);
             this.inspectionRegister.Name = "inspectionRegister";
             this.inspectionRegister.Size = new System.Drawing.Size(217, 192);
             this.inspectionRegister.TabIndex = 23;
@@ -315,7 +315,6 @@
             this.inspectionPoleIdTextBox.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.inspectionPoleIdTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.inspectionPoleIdTextBox.Location = new System.Drawing.Point(59, 3);
-            this.inspectionPoleIdTextBox.Mask = "999999999999999999999999999999999";
             this.inspectionPoleIdTextBox.Name = "inspectionPoleIdTextBox";
             this.inspectionPoleIdTextBox.PromptChar = ' ';
             this.inspectionPoleIdTextBox.Size = new System.Drawing.Size(126, 20);
@@ -343,7 +342,7 @@
             this.boxRegister.Controls.Add(this.label5);
             this.boxRegister.Controls.Add(this.boxIdTextBox);
             this.boxRegister.Controls.Add(this.label6);
-            this.boxRegister.Location = new System.Drawing.Point(9, 33);
+            this.boxRegister.Location = new System.Drawing.Point(9, 31);
             this.boxRegister.Name = "boxRegister";
             this.boxRegister.Size = new System.Drawing.Size(217, 192);
             this.boxRegister.TabIndex = 21;
@@ -459,7 +458,7 @@
             this.poleRegister.Controls.Add(this.poleHeight);
             this.poleRegister.Controls.Add(this.poleIdTextBox);
             this.poleRegister.Controls.Add(this.poleID);
-            this.poleRegister.Location = new System.Drawing.Point(9, 33);
+            this.poleRegister.Location = new System.Drawing.Point(9, 31);
             this.poleRegister.Name = "poleRegister";
             this.poleRegister.Size = new System.Drawing.Size(217, 192);
             this.poleRegister.TabIndex = 8;
@@ -476,7 +475,6 @@
             // poleBoxIdTextBox
             // 
             this.poleBoxIdTextBox.Location = new System.Drawing.Point(59, 134);
-            this.poleBoxIdTextBox.Mask = "99999999999999999999";
             this.poleBoxIdTextBox.Name = "poleBoxIdTextBox";
             this.poleBoxIdTextBox.PromptChar = ' ';
             this.poleBoxIdTextBox.Size = new System.Drawing.Size(126, 20);
@@ -494,7 +492,6 @@
             // poleLongitudeTextBox
             // 
             this.poleLongitudeTextBox.Location = new System.Drawing.Point(59, 108);
-            this.poleLongitudeTextBox.Mask = "###########.##";
             this.poleLongitudeTextBox.Name = "poleLongitudeTextBox";
             this.poleLongitudeTextBox.PromptChar = ' ';
             this.poleLongitudeTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -514,7 +511,6 @@
             // poleLatitudeTextBox
             // 
             this.poleLatitudeTextBox.Location = new System.Drawing.Point(59, 82);
-            this.poleLatitudeTextBox.Mask = "##########.##";
             this.poleLatitudeTextBox.Name = "poleLatitudeTextBox";
             this.poleLatitudeTextBox.PromptChar = ' ';
             this.poleLatitudeTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -556,7 +552,6 @@
             // poleHeightTextBox
             // 
             this.poleHeightTextBox.Location = new System.Drawing.Point(59, 30);
-            this.poleHeightTextBox.Mask = "9999";
             this.poleHeightTextBox.Name = "poleHeightTextBox";
             this.poleHeightTextBox.PromptChar = ' ';
             this.poleHeightTextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -577,7 +572,6 @@
             // 
             this.poleIdTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.poleIdTextBox.Location = new System.Drawing.Point(59, 3);
-            this.poleIdTextBox.Mask = "999999999999999999999999999999999";
             this.poleIdTextBox.Name = "poleIdTextBox";
             this.poleIdTextBox.PromptChar = ' ';
             this.poleIdTextBox.Size = new System.Drawing.Size(126, 20);
@@ -688,7 +682,6 @@
             // 
             // deleteRegisterPictureBox
             // 
-            this.deleteRegisterPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.deleteRegisterPictureBox.Image = global::Inspections.Properties.Resources.excluir;
             this.deleteRegisterPictureBox.Location = new System.Drawing.Point(399, 412);
             this.deleteRegisterPictureBox.Name = "deleteRegisterPictureBox";
@@ -698,7 +691,7 @@
             this.deleteRegisterPictureBox.TabStop = false;
             this.deleteRegisterPictureBox.Click += new System.EventHandler(this.DeleteRegisterPictureBox_Click);
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -708,8 +701,9 @@
             this.Controls.Add(this.deleteRegisterPictureBox);
             this.Controls.Add(this.listTabs);
             this.MinimumSize = new System.Drawing.Size(467, 498);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Magnani Inspections";
             this.listTabs.ResumeLayout(false);
             this.polesTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.poleGridView)).EndInit();

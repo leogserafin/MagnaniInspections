@@ -43,11 +43,20 @@ namespace Inspections.Entities
             crud.Database.ExecuteSqlCommand(insert);
         }
 
-        public void RemoveBox(int id)
+        public void Remove(int id)
         {
             string delete = $"DELETE from dbo.box WHERE id = {id};";
             crud.Database.ExecuteSqlCommand(delete);
         }
 
+        internal bool existsId(int id)
+        {
+            foreach (var box in Boxes())
+            {
+                if (id == box.id)
+                    return true;
+            }
+            return false;
+        }
     }
 }

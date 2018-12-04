@@ -32,12 +32,14 @@
             this.deleteID = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.typeToDelete = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Location = new System.Drawing.Point(12, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 13);
             this.label1.TabIndex = 0;
@@ -45,14 +47,14 @@
             // 
             // deleteID
             // 
-            this.deleteID.Location = new System.Drawing.Point(80, 12);
+            this.deleteID.Location = new System.Drawing.Point(80, 39);
             this.deleteID.Name = "deleteID";
             this.deleteID.Size = new System.Drawing.Size(106, 20);
             this.deleteID.TabIndex = 1;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 41);
+            this.button1.Location = new System.Drawing.Point(12, 65);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -62,7 +64,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(111, 41);
+            this.button2.Location = new System.Drawing.Point(111, 65);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 2;
@@ -70,16 +72,43 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.back_Click);
             // 
+            // typeToDelete
+            // 
+            this.typeToDelete.FormattingEnabled = true;
+            this.typeToDelete.Items.AddRange(new object[] {
+            "Caixa",
+            "Poste",
+            "Inspeção"});
+            this.typeToDelete.Location = new System.Drawing.Point(50, 12);
+            this.typeToDelete.Name = "typeToDelete";
+            this.typeToDelete.Size = new System.Drawing.Size(136, 21);
+            this.typeToDelete.TabIndex = 3;
+            this.typeToDelete.Text = "[Selecione]";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Tupo";
+            // 
             // deleteById
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(198, 76);
+            this.ClientSize = new System.Drawing.Size(198, 97);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.typeToDelete);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.deleteID);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MinimumSize = new System.Drawing.Size(214, 114);
             this.Name = "deleteById";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "deleteById";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -92,5 +121,7 @@
         private System.Windows.Forms.TextBox deleteID;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox typeToDelete;
+        private System.Windows.Forms.Label label2;
     }
 }

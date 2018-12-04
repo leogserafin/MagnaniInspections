@@ -138,6 +138,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\postesc.png" />
+    <None Include="Resources\voltar2.png" />
     <None Include="Resources\voltar.png" />
     <None Include="Resources\salvar.png" />
   </ItemGroup>
