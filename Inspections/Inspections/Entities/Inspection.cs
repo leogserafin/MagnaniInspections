@@ -44,12 +44,20 @@ namespace Inspections.Entities
 
         internal bool existsId(int id)
         {
-            foreach (var inspection in Inspections())
+            foreach (var tempInspection in Inspections())
             {
-                if (id == inspection.id)
+                if (id == tempInspection.id)
                     return true;
             }
             return false;
+        }
+
+        internal void checkDate(Inspection inspection)
+        {
+            foreach (var inspection in Inspections())
+            {
+
+            }
         }
     }
 }
