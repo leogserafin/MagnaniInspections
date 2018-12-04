@@ -192,6 +192,7 @@
             this.inspectionGridView.Name = "inspectionGridView";
             this.inspectionGridView.Size = new System.Drawing.Size(414, 267);
             this.inspectionGridView.TabIndex = 0;
+            this.inspectionGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.inspectionGridView_CellContentClick);
             // 
             // registerTab
             // 
@@ -673,6 +674,7 @@
             this.reportsPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.reportsPictureBox.TabIndex = 5;
             this.reportsPictureBox.TabStop = false;
+            this.reportsPictureBox.Click += new System.EventHandler(this.reportsPictureBox_Click);
             // 
             // insertNewPictureBox
             // 
@@ -698,7 +700,7 @@
             this.deleteRegisterPictureBox.TabStop = false;
             this.deleteRegisterPictureBox.Click += new System.EventHandler(this.DeleteRegisterPictureBox_Click);
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -708,7 +710,7 @@
             this.Controls.Add(this.deleteRegisterPictureBox);
             this.Controls.Add(this.listTabs);
             this.MinimumSize = new System.Drawing.Size(467, 498);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Form1";
             this.listTabs.ResumeLayout(false);
             this.polesTab.ResumeLayout(false);

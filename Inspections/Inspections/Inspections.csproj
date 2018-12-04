@@ -79,6 +79,24 @@
     <Compile Include="Entities\Box.cs" />
     <Compile Include="Entities\Inspection.cs" />
     <Compile Include="Entities\Pole.cs" />
+    <Compile Include="RelatorioAdequado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelatorioAdequado.Designer.cs">
+      <DependentUpon>RelatorioAdequado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RelatorioInspecao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelatorioInspecao.Designer.cs">
+      <DependentUpon>RelatorioInspecao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRelatorio.Designer.cs">
+      <DependentUpon>FormRelatorio.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +107,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="deleteById.resx">
       <DependentUpon>deleteById.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRelatorio.resx">
+      <DependentUpon>FormRelatorio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -104,6 +125,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RelatorioAdequado.resx">
+      <DependentUpon>RelatorioAdequado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelatorioInspecao.resx">
+      <DependentUpon>RelatorioInspecao.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

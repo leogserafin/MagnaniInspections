@@ -284,5 +284,16 @@ namespace Inspections
                 InsertValuesInGrids(Window.Box);
             }
         }
+
+        private void inspectionGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void reportsPictureBox_Click(object sender, EventArgs e)
+        {
+            FormRelatorio novoForm = new FormRelatorio();
+            novoForm.ShowDialog();
+        }
     }
 }

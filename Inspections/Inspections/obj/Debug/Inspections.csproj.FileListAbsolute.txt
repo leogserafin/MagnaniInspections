@@ -32,7 +32,6 @@ C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspecti
 C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\bin\Debug\Inspections.exe
 C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\bin\Debug\Inspections.pdb
 C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\obj\Debug\Inspections.csprojAssemblyReference.cache
-C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\obj\Debug\Inspections.Form1.resources
 C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\obj\Debug\Inspections.Properties.Resources.resources
 C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\obj\Debug\Inspections.csproj.GenerateResource.cache
 C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\obj\Debug\Inspections.csproj.CoreCompileInputs.cache
@@ -273,3 +272,8 @@ C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspecti
 C:\Users\João Gohr\Documents\GitHub\MagnaniInspections\Inspections\Inspections\obj\Debug\Inspections.csprojAssemblyReference.cache
 C:\Users\João Gohr\Documents\GitHub\MagnaniInspections\Inspections\Inspections\obj\Debug\Inspections.deleteById.resources
 C:\Users\João Gohr\Documents\GitHub\MagnaniInspections\Inspections\Inspections\obj\Debug\Inspections.MainForm.resources
+C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\obj\Debug\Inspections.deleteById.resources
+C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\obj\Debug\Inspections.FormRelatorio.resources
+C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\obj\Debug\Inspections.MainForm.resources
+C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\obj\Debug\Inspections.RelatorioInspecao.resources
+C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\obj\Debug\Inspections.RelatorioAdequado.resources

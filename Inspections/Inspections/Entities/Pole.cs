@@ -11,10 +11,10 @@ namespace Inspections.Entities
         public int id { get; set; }
         public double height { get; set; }
         public string material { get; set; }
-        public decimal latitude { get; set; }
-        public decimal longitude { get; set; }
+        public string latitude { get; set; }
+        public string longitude { get; set; }
         public int boxid { get; set; }
-        private CRUD crud - new CRUD();
+        private CRUD crud = new CRUD();
 
         public static List<Pole> Poles()
         {
