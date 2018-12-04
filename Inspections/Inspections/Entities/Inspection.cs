@@ -12,9 +12,9 @@ namespace Inspections.Entities
     class Inspection
     {
         public int id { get; set; }
-        public string bob { get; set; }
-        public string polewiring { get; set; }
-        public string polesituation { get; set; }
+        public bool bob { get; set; }
+        public bool polewiring { get; set; }
+        public bool polesituation { get; set; }
         public int poleid { get; set;}
         public DateTime date { get; set; }
         private static CRUD crud = new CRUD();
@@ -36,10 +36,20 @@ namespace Inspections.Entities
             crud.Database.ExecuteSqlCommand(insert);
         }
 
-        public void RemoveBox(int id)
+        public void Remove(int id)
         {
-            string delete = $"DELETE from dbo.inspection WHERE id = {id};";
+            string delete = $"DELETE FROM dbo.inspection WHERE id = {id};";
             crud.Database.ExecuteSqlCommand(delete);
+        }
+
+        internal bool existsId(int id)
+        {
+            foreach (var inspection in Inspections())
+            {
+                if (id == inspection.id)
+                    return true;
+            }
+            return false;
         }
     }
 }

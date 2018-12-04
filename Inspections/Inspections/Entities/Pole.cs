@@ -1,4 +1,5 @@
 ﻿using Inspections.DataBase;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace Inspections.Entities
     class Pole
     {
         public int id { get; set; }
-        public double height { get; set; }
+        public int height { get; set; }
         public string material { get; set; }
         public string latitude { get; set; }
         public string longitude { get; set; }
@@ -33,10 +34,25 @@ namespace Inspections.Entities
             crud.Database.ExecuteSqlCommand(insert);
         }
 
-        public void RemovePole(int id)
+        public void Remove(int id)
         {
-            string remove = $"DELETE from dbo.pole WHERE id = {id};";
-            crud.Database.ExecuteSqlCommand(remove);                    
+            string delete = $"DELETE FROM dbo.pole WHERE id = {id};";
+            crud.Database.ExecuteSqlCommand(delete);                    
+        }
+
+        internal bool existsId(int id)
+        {
+            foreach (var pole in Poles())
+            {
+                if (id == pole.id)
+                    return true;
+            }
+            return false;
+        }
+
+        internal object GetMaterial()
+        {
+            return material == "F" ? "Concreto" : "Ferro";
         }
     }
 }

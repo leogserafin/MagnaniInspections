@@ -273,7 +273,7 @@ C:\Users\João Gohr\Documents\GitHub\MagnaniInspections\Inspections\Inspections\
 C:\Users\João Gohr\Documents\GitHub\MagnaniInspections\Inspections\Inspections\obj\Debug\Inspections.deleteById.resources
 C:\Users\João Gohr\Documents\GitHub\MagnaniInspections\Inspections\Inspections\obj\Debug\Inspections.MainForm.resources
 C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\obj\Debug\Inspections.deleteById.resources
-C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\obj\Debug\Inspections.FormRelatorio.resources
 C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\obj\Debug\Inspections.MainForm.resources
-C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\obj\Debug\Inspections.RelatorioInspecao.resources
-C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\obj\Debug\Inspections.RelatorioAdequado.resources
+C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\obj\Debug\Inspections.ProperReport.resources
+C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\obj\Debug\Inspections.ReportForm.resources
+C:\Users\leogs\Documents\Banco de Dados\Magnani Inspections\Inspections\Inspections\obj\Debug\Inspections.InspectionForm.resources
